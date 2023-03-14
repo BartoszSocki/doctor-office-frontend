@@ -46,9 +46,13 @@
   font-weight: bold;
   cursor: pointer;
 
-  border: 2px solid blue;
+  border: 2px solid currentColor;
   padding: 0.1rem 0.2rem;
   border-radius: 4px;
+
+  &:hover {
+    color: #0000d0;
+  }
 }
 
 .visit-btn-remove {
@@ -60,9 +64,13 @@
   font-weight: bold;
   cursor: pointer;
 
-  border: 2px solid black;
+  border: 2px solid currentColor;
   padding: 0.1rem 0.2rem;
   border-radius: 4px;
+
+  &:hover {
+    color: #bd0000;
+  }
 }
 
 .visit-space {

@@ -4,6 +4,8 @@ import ReactDOM from 'react-dom/client'
 // components/pages
 import Root from './pages/Root';
 // import Root from "@Pages/Root";
+import VisitPlanner from './pages/DoctorOffice/VisitPlanner';
+import VisitModal from '@Components/Modals/VisitModal';
 
 // utils
 import {
@@ -13,7 +15,6 @@ import {
 
 // css
 import './index.css'
-import VisitPlanner from './pages/DoctorOffice/VisitPlanner';
 
 // routing in application
 const router = createBrowserRouter([
@@ -23,7 +24,11 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/appointement-planner",
-        element: <VisitPlanner />
+        element: <VisitPlanner /> 
+      },
+      {
+        path: "/modal-test",
+        element: <VisitModal />
       }
     ]
   }

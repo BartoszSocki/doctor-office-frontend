@@ -5,9 +5,10 @@ type PlannedVisitPropsType = {
   endTime: String;
   localization: String;
   typeOfVisit: String;
+  onRemove: any;
 };
 
-const PlannedVisit = ({begTime, endTime, localization, typeOfVisit}: PlannedVisitPropsType) => {
+const PlannedVisit = ({begTime, endTime, localization, typeOfVisit, onRemove}: PlannedVisitPropsType) => {
   return (
     <div className="visit-wrapper">
       <em className="visit-time">{begTime}-{endTime}</em>
@@ -16,7 +17,7 @@ const PlannedVisit = ({begTime, endTime, localization, typeOfVisit}: PlannedVisi
       <div className="visit-space" />
       <div className="visit-actions">
         <button className="visit-btn-edit">edit</button>
-        <button className="visit-btn-remove">remove</button>
+        <button className="visit-btn-remove" onClick={onRemove}>remove</button>
       </div>
     </div>
   )

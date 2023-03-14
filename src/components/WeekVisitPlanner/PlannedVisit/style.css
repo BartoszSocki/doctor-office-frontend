@@ -1,0 +1,70 @@
+.visit-wrapper {
+  display: flex;
+  gap: 2.5ch;
+  padding-block: 0.8rem;
+  /* border: 1px solid black; */
+  border-bottom: 1px solid black;
+
+  &:last-child {
+    border-bottom: none;
+  }
+}
+
+.visit-time {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-width: 12ch;
+  max-width: 12ch;
+}
+
+.visit-localization {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-width: 12ch;
+  max-width: 12ch;
+}
+
+.visit-type {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-width: 20ch;
+  max-width: 20ch;
+}
+
+.visit-actions {
+  display: flex;
+  flex-direction: row;
+  gap: 1.5ch;
+}
+
+.visit-btn-edit {
+  border: 1px solid transparent;
+  background: transparent;
+  display: inline-block;
+  align-self: end;
+  color: blue;
+  font-weight: bold;
+  cursor: pointer;
+
+  border: 2px solid blue;
+  padding: 0.1rem 0.2rem;
+  border-radius: 4px;
+}
+
+.visit-btn-remove {
+  border: 1px solid transparent;
+  background: transparent;
+  display: inline-block;
+  align-self: end;
+  color: rgb(216, 89, 89);
+  font-weight: bold;
+  cursor: pointer;
+
+  border: 2px solid black;
+  padding: 0.1rem 0.2rem;
+  border-radius: 4px;
+}
+
+.visit-space {
+  flex-grow: 1;
+}

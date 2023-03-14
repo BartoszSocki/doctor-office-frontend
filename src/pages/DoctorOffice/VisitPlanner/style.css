@@ -1,5 +1,6 @@
 .planner-wrapper {
   padding: 1rem;
+  width: 100%;
 }
 
 .planner-header {
@@ -9,4 +10,8 @@
 
 .planner-body {
 
+}
+
+.planner {
+  
 }

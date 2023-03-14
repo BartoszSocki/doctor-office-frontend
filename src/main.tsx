@@ -13,7 +13,7 @@ import {
 
 // css
 import './index.css'
-import AppointementPlanner from './pages/DoctorOffice/AppointementPlanner';
+import VisitPlanner from './pages/DoctorOffice/VisitPlanner';
 
 // routing in application
 const router = createBrowserRouter([
@@ -23,7 +23,7 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/appointement-planner",
-        element: <AppointementPlanner />
+        element: <VisitPlanner />
       }
     ]
   }

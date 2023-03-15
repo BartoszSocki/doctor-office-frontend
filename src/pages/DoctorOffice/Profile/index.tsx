@@ -1,8 +1,8 @@
 interface ProfileProps {
-  name: string
-  surname: string
-  email: string
-  specialization: [string]
+  name: string;
+  surname: string;
+  email: string;
+  specialization: [string];
 }
 
 const Profile = ({ name, surname, email, specialization }: ProfileProps) => {
@@ -15,7 +15,7 @@ const Profile = ({ name, surname, email, specialization }: ProfileProps) => {
         <p>specialization: {specialization}</p>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Profile
+export default Profile;

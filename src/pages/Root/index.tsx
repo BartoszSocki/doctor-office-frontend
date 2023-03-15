@@ -1,6 +1,6 @@
-import { Outlet } from 'react-router-dom'
-import Sidebar from '@Components/Sidebar'
-import './style.css'
+import { Outlet } from "react-router-dom";
+import Sidebar from "@Components/Sidebar";
+import "./style.css";
 
 const Root = () => {
   return (
@@ -8,7 +8,7 @@ const Root = () => {
       <Sidebar />
       <Outlet />
     </div>
-  )
-}
+  );
+};
 
-export default Root
+export default Root;

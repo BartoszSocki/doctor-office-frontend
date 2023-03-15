@@ -1,4 +1,5 @@
 import { useForm } from "react-hook-form";
+import "./style.css";
 
 interface VisitModalPropsInterface {
   initState?: any;

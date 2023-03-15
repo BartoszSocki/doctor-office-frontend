@@ -1,9 +1,9 @@
-import './style.css'
-import { Link } from 'react-router-dom'
+import "./style.css";
+import { Link } from "react-router-dom";
 
 interface SidebarElemProps {
-  name: string
-  to?: any // TODO
+  name: string;
+  to?: any; // TODO
 }
 
 const SidebarElem = ({ name, to }: SidebarElemProps) => {
@@ -15,7 +15,7 @@ const SidebarElem = ({ name, to }: SidebarElemProps) => {
         </Link>
       </li>
     </>
-  )
-}
+  );
+};
 
-export default SidebarElem
+export default SidebarElem;

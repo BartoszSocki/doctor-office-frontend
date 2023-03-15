@@ -1,5 +1,5 @@
-import SidebarElem from './SidebarElem'
-import './style.css'
+import SidebarElem from "./SidebarElem";
+import "./style.css";
 
 const Sidebar = () => {
   return (
@@ -10,10 +10,13 @@ const Sidebar = () => {
 
       <section className="sidebar-body">
         <ul className="sidebar-body-flex">
-          <SidebarElem name={'⚕️ doctor office'} to={'/appointement-planner'} key={'a'} />
-          <SidebarElem name={'🩺 patients'} key={'b'} />
-          <SidebarElem name={'📂 patients documentation'} key={'c'} />
-
+          <SidebarElem
+            name={"⚕️ doctor office"}
+            to={"/appointement-planner"}
+            key={"a"}
+          />
+          <SidebarElem name={"🩺 patients"} key={"b"} />
+          <SidebarElem name={"📂 patients documentation"} key={"c"} />
         </ul>
       </section>
 
@@ -21,12 +24,12 @@ const Sidebar = () => {
 
       <section className="sidebar-footer">
         <ul className="sidebar-body-flex">
-          <SidebarElem name={'⚙️ preferences'} key={'aa'} />
-          <SidebarElem name={'🔒 log out'} key={'bb'} />
+          <SidebarElem name={"⚙️ preferences"} key={"aa"} />
+          <SidebarElem name={"🔒 log out"} key={"bb"} />
         </ul>
       </section>
     </div>
-  )
-}
+  );
+};
 
-export default Sidebar
+export default Sidebar;

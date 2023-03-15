@@ -1,5 +1,5 @@
-import WeekVisitPlanner from '@Components/WeekVisitPlanner';
-import './style.css';
+import WeekVisitPlanner from '@Components/WeekVisitPlanner'
+import './style.css'
 
 const VisitPlanner = () => {
   return (
@@ -9,7 +9,7 @@ const VisitPlanner = () => {
         <WeekVisitPlanner />
       </div>
     </div>
-  );
+  )
 }
 
-export default VisitPlanner;
+export default VisitPlanner

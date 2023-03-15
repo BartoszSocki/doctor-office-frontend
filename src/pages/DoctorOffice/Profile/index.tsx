@@ -1,11 +1,11 @@
-type ProfileProps = {
-  name: String;
-  surname: String;
-  email: String;
-  specialization: [String];
-};
+interface ProfileProps {
+  name: string
+  surname: string
+  email: string
+  specialization: [string]
+}
 
-const Profile = ({name, surname, email, specialization}: ProfileProps) => {
+const Profile = ({ name, surname, email, specialization }: ProfileProps) => {
   return (
     <div>
       <div>
@@ -15,7 +15,7 @@ const Profile = ({name, surname, email, specialization}: ProfileProps) => {
         <p>specialization: {specialization}</p>
       </div>
     </div>
-  );
+  )
 }
 
-export default Profile;
+export default Profile

@@ -1,24 +1,24 @@
-import { useEffect, useState } from 'react';
-import { FiChevronDown, FiChevronUp, FiPlus } from "react-icons/fi";
-import './style.css';
+import { useEffect, useState } from 'react'
+import { FiChevronDown, FiChevronUp, FiPlus } from 'react-icons/fi'
+import './style.css'
 
-type DayVisitPlannerPropsType = {
-  name: String;
-  children: any; // TODO
+interface DayVisitPlannerPropsType {
+  name: string
+  children: any // TODO
 }
 
 // TODO
-const DayVisitPlanner = ({name, children}: DayVisitPlannerPropsType) => {
-  const [date, setDate] = useState("");
-  const [isCollapsed, setIsCollapsed] = useState(false);
+const DayVisitPlanner = ({ name, children }: DayVisitPlannerPropsType) => {
+  const [date, setDate] = useState('')
+  const [isCollapsed, setIsCollapsed] = useState(false)
 
   useEffect(() => {
-    let date = new Date().toISOString().split('T')[0];
-    setDate(date);
-  }, []);
+    const date = new Date().toISOString().split('T')[0]
+    setDate(date)
+  }, [])
 
   const toggleCollapse = () => {
-    setIsCollapsed(prev => !prev);
+    setIsCollapsed(prev => !prev)
   }
 
   return (
@@ -32,13 +32,13 @@ const DayVisitPlanner = ({name, children}: DayVisitPlannerPropsType) => {
         <div className="day-visit-planner-space" />
         <button className="day-visit-planner-btn-collapse" onClick={toggleCollapse}>
             collapse
-            {isCollapsed ?  <FiChevronUp /> : <FiChevronDown />}
+            {isCollapsed ? <FiChevronUp /> : <FiChevronDown />}
         </button>
       </div>
 
       {isCollapsed ? <div>...</div> : <div className="day-visit-planner-visits">{children}</div>}
     </div>
-  );
+  )
 }
 
 export default DayVisitPlanner

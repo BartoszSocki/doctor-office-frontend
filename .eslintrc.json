@@ -6,7 +6,8 @@
     },
     "extends": [
         "plugin:react/recommended",
-        "standard-with-typescript"
+        "standard-with-typescript",
+        "prettier"
     ],
     "overrides": [
     ],
@@ -17,7 +18,7 @@
         "project": ["./tsconfig.json", "./vite.config.ts"] // the path to your TypeScript configuration file
     },
     "plugins": [
-        "react"
+        "react", "prettier"
     ],
     "rules": {
         "@typescript-eslint/explicit-function-return-type": "off",

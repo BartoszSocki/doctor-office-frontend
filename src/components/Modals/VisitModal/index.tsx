@@ -1,5 +1,9 @@
 const VisitModal = () => {
-  return (<div>hello</div>);
+  return (
+    <div>
+      {/* <div>{title}</div> */}
+    </div>
+  );
 }
 
 export default VisitModal;

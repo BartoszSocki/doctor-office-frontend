@@ -2,9 +2,8 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 
 // components/pages
-import Root from './pages/Root';
-// import Root from "@Pages/Root";
-import VisitPlanner from './pages/DoctorOffice/VisitPlanner';
+import Root from "@Pages/Root";
+import VisitPlanner from '@Pages/DoctorOffice/VisitPlanner';
 import VisitModal from '@Components/Modals/VisitModal';
 
 // utils

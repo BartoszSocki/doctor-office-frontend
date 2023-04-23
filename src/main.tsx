@@ -11,6 +11,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 // css
 import "./index.css";
+import LoginPage from "@Pages/Auth/Login";
 
 // routing in application
 const router = createBrowserRouter([
@@ -25,6 +26,10 @@ const router = createBrowserRouter([
       {
         path: "/modal-test",
         element: <VisitModal />,
+      },
+      {
+        path: "/login",
+        element: <LoginPage />,
       },
     ],
   },

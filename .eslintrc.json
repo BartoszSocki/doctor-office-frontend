@@ -25,8 +25,10 @@
         "react/react-in-jsx-scope": "off",
         "@typescript-eslint/ban-ts-comment": "off",
         "@typescript-eslint/no-unused-vars": "warn",
+        "@typescript-eslint/triple-slash-reference": "off",
+        "@typescript-eslint/no-misused-promises": "warn",
+        "@typescript-eslint/no-confusing-void-expression": "off",
         "no-lone-blocks": "off",
-        "prettier/prettier": "error",
-        "@typescript-eslint/no-misused-promises": "warn"
+        "prettier/prettier": "error"
     }
 }

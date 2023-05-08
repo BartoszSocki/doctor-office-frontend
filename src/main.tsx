@@ -11,27 +11,18 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 // css
 import "./index.css";
-import LoginPage from "@Pages/Auth/Login";
+import Login from "@Pages/Auth/Login";
+import Dashboard from "@Pages/Dashboard";
 
 // routing in application
 const router = createBrowserRouter([
   {
-    path: "/",
-    element: <Root />,
-    children: [
-      {
-        path: "/appointement-planner",
-        element: <VisitPlanner />,
-      },
-      {
-        path: "/modal-test",
-        element: <VisitModal />,
-      },
-      {
-        path: "/login",
-        element: <LoginPage />,
-      },
-    ],
+    path: "/login",
+    element: <Login />,
+  },
+  {
+    path: "/dashboard",
+    element: <Dashboard />,
   },
 ]);
 

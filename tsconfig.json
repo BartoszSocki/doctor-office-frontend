@@ -19,6 +19,11 @@
     "paths": {
       "@Components/*": ["components/*"],
       "@Pages/*": ["pages/*"],
+      "@Hooks/*": ["hooks/*"],
+      "@Types/*": [ "shared/types/*"],
+      "@Interfaces/*": ["shared/interfaces/*"],
+      "@Utils/*": ["shared/utils/*"],
+
     }
   },
   "include": ["src"],

@@ -1,9 +1,12 @@
 import { useNavigate } from "react-router-dom";
 import SidebarLink from "./SidebarLink";
 import "./style.css";
+import SidebarButton from "./SidebarButton";
+import useAuth from "@Hooks/useAuth";
 
 const Sidebar = () => {
   const navigate = useNavigate();
+  const { logout } = useAuth();
 
   return (
     <div className="sidebar-wrapper">
@@ -28,7 +31,11 @@ const Sidebar = () => {
       <section className="sidebar-footer">
         <ul className="sidebar-body-flex">
           <SidebarLink name={"⚙️ preferences"} to={""} key={"aa"} />
-          <SidebarLink name={"🔒 log out"} key={"bb"} />
+          <SidebarButton
+            name={"🔒 log out"}
+            key={"bb"}
+            onClickHandler={() => logout(() => navigate("/login"))}
+          />
           {/* <SidebarButton /> */}
           {/* <button onClick={() => logout(() => naviagte("/login"))}>log out</button> */}
         </ul>

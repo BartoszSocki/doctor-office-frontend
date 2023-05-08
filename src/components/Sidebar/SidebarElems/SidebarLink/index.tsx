@@ -1,12 +1,12 @@
 import type SidebarLinkProps from "@Interfaces/SidebarLinkProps";
-import "./style.css";
+import "../style.css";
 import { Link } from "react-router-dom";
 
 const SidebarLink = ({ name, to }: SidebarLinkProps) => {
   return (
     <>
       <li>
-        <Link className="sidebar-elem-wrapper sidebar-elem-link" to={to}>
+        <Link className="sidebar-elem-wrapper sidebar-elem" to={to}>
           <p>{name}</p>
         </Link>
       </li>

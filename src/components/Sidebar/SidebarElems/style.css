@@ -1,22 +1,28 @@
-.sidebar-button {
+.sidebar-elem-wrapper {
   padding: 1rem;
   width: 100%;
   display: inline-block;
-  text-align: left;
-  font-size: 1rem;
 
   border: 1px solid transparent;
   border-radius: 0.8rem;
   border-color: #befcff;
   background: #f5ffff;
 
+  cursor: pointer;
+
   &:hover {
     background: #dbffff;
     border-color: #5ae1d4;
   }
+}
 
+.sidebar-elem {
+  width: 100%;
   height: 100%;
   display: inline-block;
+
+  text-align: left;
+  font-size: 1rem;
 
   text-decoration: none;
   color: black;

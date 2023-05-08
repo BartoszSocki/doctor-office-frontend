@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
-import SidebarLink from "./SidebarLink";
+import SidebarLink from "./SidebarElems/SidebarLink";
 import "./style.css";
-import SidebarButton from "./SidebarButton";
+import SidebarButton from "./SidebarElems/SidebarButton";
 import useAuth from "@Hooks/useAuth";
 
 const Sidebar = () => {

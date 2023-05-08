@@ -3,42 +3,21 @@ import SidebarLink from "./SidebarElems/SidebarLink";
 import "./style.css";
 import SidebarButton from "./SidebarElems/SidebarButton";
 import useAuth from "@Hooks/useAuth";
+import SidebarDoctor from "./SidebarDoctor";
+import SidebarClient from "./SidebarClient";
 
 const Sidebar = () => {
   const navigate = useNavigate();
-  const { logout } = useAuth();
+  const { role } = useAuth();
 
   return (
-    <div className="sidebar-wrapper">
-      <section className="sidebar-header">
-        <p>Menu</p>
-      </section>
-
-      <section className="sidebar-body">
-        <ul className="sidebar-body-flex">
-          <SidebarLink
-            name={"⚕️ doctor office"}
-            to={"/appointement-planner"}
-            key={"a"}
-          />
-          <SidebarLink name={"🩺 patients"} to={""} key={"b"} />
-          <SidebarLink name={"📂 patients documentation"} to={""} key={"c"} />
-        </ul>
-      </section>
-
-      <div className="sidebar-space" />
-
-      <section className="sidebar-footer">
-        <ul className="sidebar-body-flex">
-          <SidebarLink name={"⚙️ preferences"} to={""} key={"aa"} />
-          <SidebarButton
-            name={"🔒 log out"}
-            key={"bb"}
-            onClickHandler={() => logout(() => navigate("/login"))}
-          />
-        </ul>
-      </section>
-    </div>
+    <>
+      {role === "DOCTOR" ? (
+        <SidebarDoctor />
+      ) : role === "CLIENT" ? (
+        <SidebarClient />
+      ) : null}
+    </>
   );
 };
 

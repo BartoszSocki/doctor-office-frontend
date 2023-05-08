@@ -1,15 +1,16 @@
+import axios from "axios";
 import { useState } from "react";
 import jwt from "jwt-decode";
-import type JwtData from "shared/interfaces/JwtData";
-import type Credentials from "shared/interfaces/Credentials";
-import { isNotEmpty } from "shared/utils/StringUtils";
-import axios from "axios";
-import type Role from "shared/types/Role";
+
+import type JwtData from "@Interfaces/JwtData";
+import type Credentials from "@Interfaces/Credentials";
+import type Role from "@Types/Role";
+import { isNotEmpty } from "@Utils/StringUtils";
 
 const TOKEN_URL = import.meta.env.VITE_API_URL + "/token";
 
 const useAuth = () => {
-  const [isAuthenticated, setIsAuthenticated] = useState(
+  const [isAuthenticated, setIsAuthenticated] = useState<boolean>(
     isNotEmpty(localStorage.getItem("token"))
   );
   const [role, setRole] = useState<Role>("ANONYMOUS");

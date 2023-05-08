@@ -11,7 +11,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 // css
 import "./index.css";
-import Login from "@Pages/Auth/Login";
+import Login from "@Pages/Login";
 import Dashboard from "@Pages/Dashboard";
 
 // routing in application

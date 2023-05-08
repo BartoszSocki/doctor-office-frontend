@@ -1,7 +1,10 @@
-import SidebarElem from "./SidebarElem";
+import { useNavigate } from "react-router-dom";
+import SidebarLink from "./SidebarLink";
 import "./style.css";
 
 const Sidebar = () => {
+  const navigate = useNavigate();
+
   return (
     <div className="sidebar-wrapper">
       <section className="sidebar-header">
@@ -10,13 +13,13 @@ const Sidebar = () => {
 
       <section className="sidebar-body">
         <ul className="sidebar-body-flex">
-          <SidebarElem
+          <SidebarLink
             name={"⚕️ doctor office"}
             to={"/appointement-planner"}
             key={"a"}
           />
-          <SidebarElem name={"🩺 patients"} key={"b"} />
-          <SidebarElem name={"📂 patients documentation"} key={"c"} />
+          <SidebarLink name={"🩺 patients"} to={""} key={"b"} />
+          <SidebarLink name={"📂 patients documentation"} to={""} key={"c"} />
         </ul>
       </section>
 
@@ -24,8 +27,10 @@ const Sidebar = () => {
 
       <section className="sidebar-footer">
         <ul className="sidebar-body-flex">
-          <SidebarElem name={"⚙️ preferences"} key={"aa"} />
-          <SidebarElem name={"🔒 log out"} key={"bb"} />
+          <SidebarLink name={"⚙️ preferences"} to={""} key={"aa"} />
+          <SidebarLink name={"🔒 log out"} key={"bb"} />
+          {/* <SidebarButton /> */}
+          {/* <button onClick={() => logout(() => naviagte("/login"))}>log out</button> */}
         </ul>
       </section>
     </div>

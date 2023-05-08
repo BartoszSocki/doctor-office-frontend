@@ -36,8 +36,6 @@ const Sidebar = () => {
             key={"bb"}
             onClickHandler={() => logout(() => navigate("/login"))}
           />
-          {/* <SidebarButton /> */}
-          {/* <button onClick={() => logout(() => naviagte("/login"))}>log out</button> */}
         </ul>
       </section>
     </div>

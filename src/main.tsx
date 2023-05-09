@@ -13,6 +13,8 @@ import "./index.css";
 import Login from "@Pages/Login";
 import Dashboard from "@Pages/Dashboard";
 import ClientVisits from "@Pages/ClientVisits";
+import axios from "axios";
+import { getToken } from "@Utils/TokenUtils";
 
 // routing in application
 const router = createBrowserRouter([

@@ -1,4 +1,4 @@
-import WeekVisitPlanner from "@Components/WeekVisitPlanner";
+import WeekVisitPlanner from "@Components/WeekVisitPlanner/WeekVisitPlanner";
 import "./style.css";
 
 const VisitPlanner = () => {

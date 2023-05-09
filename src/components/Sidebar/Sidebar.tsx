@@ -1,7 +1,7 @@
 import "./style.css";
 import useAuth from "@Hooks/useAuth";
-import SidebarDoctor from "./SidebarDoctor";
-import SidebarClient from "./SidebarClient";
+import SidebarDoctor from "./DoctorSidebar";
+import ClientSidebar from "./ClientSidebar";
 
 const Sidebar = () => {
   const { role, isAuthenticated } = useAuth();
@@ -13,7 +13,7 @@ const Sidebar = () => {
       {role === "DOCTOR" ? (
         <SidebarDoctor />
       ) : role === "CLIENT" ? (
-        <SidebarClient />
+        <ClientSidebar />
       ) : null}
     </>
   );

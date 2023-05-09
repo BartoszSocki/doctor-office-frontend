@@ -1,4 +1,4 @@
-import PlannedVisit from "@Components/WeekVisitPlanner/PlannedVisit";
+import PlannedVisit from "@Components/PlannedVisit/PlannedVisit";
 import { useEffect, useState } from "react";
 import { getToken } from "@Utils/TokenUtils";
 import "./style.css";

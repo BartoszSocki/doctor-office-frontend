@@ -1,6 +1,6 @@
 import { useState } from "react";
-import DayVisitPlanner from "./DayVisitPlanner";
-import PlannedVisit from "./PlannedVisit";
+import DayVisitPlanner from "../DayVisitScheduler/DayVisitScheduler";
+import PlannedVisit from "../PlannedVisit/PlannedVisit";
 import "./style.css";
 
 const exampleJSON = {

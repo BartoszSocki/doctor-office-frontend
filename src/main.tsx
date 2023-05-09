@@ -10,11 +10,9 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 // css
 import "./index.css";
-import Login from "@Pages/Login";
-import Dashboard from "@Pages/Dashboard";
-import ClientVisits from "@Pages/ClientVisits";
-import axios from "axios";
-import { getToken } from "@Utils/TokenUtils";
+import Login from "@Pages/Login/Login";
+import Dashboard from "@Pages/Dashboard/Dashboard";
+import ClientVisits from "@Pages/ClientVisits/ClientVisits";
 
 // routing in application
 const router = createBrowserRouter([

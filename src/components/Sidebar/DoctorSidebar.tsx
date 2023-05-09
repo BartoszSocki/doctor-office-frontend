@@ -4,7 +4,7 @@ import "./style.css";
 import SidebarButton from "./SidebarElems/SidebarButton";
 import useAuth from "@Hooks/useAuth";
 
-const SidebarDoctor = () => {
+const DoctorSidebar = () => {
   const navigate = useNavigate();
   const { logout } = useAuth();
 
@@ -19,7 +19,11 @@ const SidebarDoctor = () => {
           <SidebarLink name={"⚕️ doctor's office"} to={""} key={"a"} />
           <SidebarLink name={"🩺 patients"} to={""} key={"b"} />
           <SidebarLink name={"📂 patients documentation"} to={""} key={"c"} />
-          <SidebarLink name={"📅 planned visits"} to={""} key={"d"} />
+          <SidebarLink
+            name={"📅 planned visits"}
+            to={"/dashboard/doctor/planned-visits"}
+            key={"d"}
+          />
         </ul>
       </section>
 
@@ -39,4 +43,4 @@ const SidebarDoctor = () => {
   );
 };
 
-export default SidebarDoctor;
+export default DoctorSidebar;

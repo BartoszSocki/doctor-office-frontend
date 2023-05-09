@@ -5,19 +5,19 @@ import "./style.css";
 
 import axios from "axios";
 
-const CLIENT_VISITS_URL =
-  import.meta.env.VITE_API_URL + "/api/client/planned-visits";
+const DOCTOR_VISITS_URL =
+  import.meta.env.VITE_API_URL + "/api/doctor/planned-visits";
 
-const CLIENT_SINGLE_VISIT_URL =
-  import.meta.env.VITE_API_URL + "/api/client/planned-visits/{}";
+const DOCTOR_SINGLE_VISIT_URL =
+  import.meta.env.VITE_API_URL + "/api/doctor/planned-visits/{}";
 
-const ClientVisits = () => {
+const DoctorVisits = () => {
   const [links, setLinks] = useState({});
   const [plannedVisits, setPlannedVisits] = useState<any[]>([]);
 
   useEffect(() => {
     const f = async () => {
-      const plannedVisitsData = await axios.get(CLIENT_VISITS_URL, {
+      const plannedVisitsData = await axios.get(DOCTOR_VISITS_URL, {
         headers: { Authorization: `Bearer ${getToken()}` },
       });
 
@@ -37,7 +37,7 @@ const ClientVisits = () => {
           const cancel = async () => {
             console.log("this");
             await axios.delete(
-              CLIENT_SINGLE_VISIT_URL.replace("{}", p.id.toString()),
+              DOCTOR_SINGLE_VISIT_URL.replace("{}", p.id.toString()),
               {
                 headers: { Authorization: `Bearer ${getToken()}` },
               }
@@ -47,7 +47,7 @@ const ClientVisits = () => {
             <PlannedVisit
               plannedVisit={{
                 ...p,
-                user: `dr. ${p.doctorName} ${p.doctorSurname}`,
+                user: `${p.clientName} ${p.clientSurname}`,
               }}
               onRemove={cancel}
               key={p.id}
@@ -59,4 +59,4 @@ const ClientVisits = () => {
   );
 };
 
-export default ClientVisits;
+export default DoctorVisits;

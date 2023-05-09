@@ -1,29 +1,23 @@
-import type PlannedVisitProps from "@Interfaces/PlannedVisitProps";
 import "./style.css";
 
 const PlannedVisit = (props: any) => {
-  const {
-    day,
-    begTime,
-    endTime,
-    street,
-    doctorName,
-    doctorSurname,
-    cancelled,
-  } = props.plannedVisit;
+  const { day, begTime, endTime, street, user, cancelled } = props.plannedVisit;
   const onRemove = props.onRemove;
+
+  const begTimeFormated: string = begTime.substring(0, begTime.length - 3);
+  const endTimeFormated: string = endTime.substring(0, endTime.length - 3);
+  const date = new Date(Date.parse(day)).toLocaleDateString();
+
+  const duration = `${begTimeFormated}-${endTimeFormated}`;
+  const cancelledMessage = (cancelled as boolean) ? "cancelled" : "active";
 
   return (
     <div className="visit-wrapper">
-      <div className="">{day}</div>
-      <em className="">
-        {begTime}-{endTime}
-      </em>
+      <div className="">{date}</div>
+      <em className="">{duration}</em>
       <div className="">{street}</div>
-      <div className="">
-        dr. {doctorName} {doctorSurname}
-      </div>
-      <div className="">{cancelled ? "cancelled" : "active"}</div>
+      <div className="">{user}</div>
+      <div className="">{cancelledMessage}</div>
       <div className="visit-space" />
       <div className="visit-actions">
         <button className="visit-btn-edit">edit</button>

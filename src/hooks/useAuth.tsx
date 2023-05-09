@@ -4,13 +4,18 @@ import { useState } from "react";
 import type Credentials from "@Interfaces/Credentials";
 import type Role from "@Types/Role";
 import { isNotEmpty } from "@Utils/StringUtils";
-import { role as tokenRole, saveToken, deleteToken } from "@Utils/TokenUtils";
+import {
+  role as tokenRole,
+  saveToken,
+  deleteToken,
+  isTokenValid,
+} from "@Utils/TokenUtils";
 
 const TOKEN_URL = import.meta.env.VITE_API_URL + "/token";
 
 const useAuth = () => {
   const [isAuthenticated, setIsAuthenticated] = useState<boolean>(
-    isNotEmpty(localStorage.getItem("token"))
+    isNotEmpty(localStorage.getItem("token")) && isTokenValid()
   );
   const [role, setRole] = useState<Role>(tokenRole());
 

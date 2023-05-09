@@ -19,4 +19,14 @@ const deleteToken = () => {
   localStorage.removeItem("token");
 };
 
-export { role, saveToken, deleteToken, getToken };
+const isTokenValid = () => {
+  const token = jwt<JwtData>(getToken());
+  if (!("exp" in token)) {
+    return false;
+  }
+
+  const nowInSeconds = Date.now() / 1000;
+  return token.exp >= nowInSeconds;
+};
+
+export { role, saveToken, deleteToken, getToken, isTokenValid };

@@ -13,6 +13,7 @@ import "./index.css";
 import Login from "@Pages/Login/Login";
 import Dashboard from "@Pages/Dashboard/Dashboard";
 import ClientVisits from "@Pages/ClientVisits/ClientVisits";
+import DoctorVisits from "@Pages/DoctorVisits/DoctorVisits";
 
 // routing in application
 const router = createBrowserRouter([
@@ -27,6 +28,10 @@ const router = createBrowserRouter([
       {
         path: "/dashboard/client/planned-visits",
         element: <ClientVisits />,
+      },
+      {
+        path: "/dashboard/doctor/planned-visits",
+        element: <DoctorVisits />,
       },
     ],
   },

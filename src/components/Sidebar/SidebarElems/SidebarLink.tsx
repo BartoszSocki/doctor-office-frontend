@@ -1,5 +1,5 @@
 import type SidebarLinkProps from "@Interfaces/SidebarLinkProps";
-import "../style.css";
+import "./style.css";
 import { Link } from "react-router-dom";
 
 const SidebarLink = ({ name, to }: SidebarLinkProps) => {

@@ -1,5 +1,5 @@
 import type SidebarButtonProps from "@Interfaces/SidebarButtonProps";
-import "../style.css";
+import "./style.css";
 
 const SidebarButton = ({ name, onClickHandler }: SidebarButtonProps) => {
   return (

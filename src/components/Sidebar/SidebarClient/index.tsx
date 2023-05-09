@@ -17,7 +17,8 @@ const SidebarClient = () => {
       <section className="sidebar-body">
         <ul className="sidebar-body-flex">
           <SidebarLink name={"👨‍⚕️ doctors"} to={""} key={"b"} />
-          <SidebarLink name={"📅 planned visits"} to={""} key={"c"} />
+          <SidebarLink name={"🔎 search visits"} to={""} key={"c"} />
+          <SidebarLink name={"📅 your visits"} to={""} key={"c"} />
         </ul>
       </section>
 

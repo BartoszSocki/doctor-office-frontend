@@ -1,14 +1,12 @@
-import { useNavigate } from "react-router-dom";
-import SidebarLink from "./SidebarElems/SidebarLink";
 import "./style.css";
-import SidebarButton from "./SidebarElems/SidebarButton";
 import useAuth from "@Hooks/useAuth";
 import SidebarDoctor from "./SidebarDoctor";
 import SidebarClient from "./SidebarClient";
 
 const Sidebar = () => {
-  const navigate = useNavigate();
-  const { role } = useAuth();
+  const { role, isAuthenticated } = useAuth();
+
+  console.log(role, isAuthenticated);
 
   return (
     <>

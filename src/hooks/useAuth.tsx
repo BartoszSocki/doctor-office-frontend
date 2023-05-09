@@ -1,11 +1,10 @@
 import axios from "axios";
 import { useState } from "react";
-import jwt from "jwt-decode";
 
-import type JwtData from "@Interfaces/JwtData";
 import type Credentials from "@Interfaces/Credentials";
 import type Role from "@Types/Role";
 import { isNotEmpty } from "@Utils/StringUtils";
+import { role as tokenRole, saveToken, deleteToken } from "@Utils/TokenUtils";
 
 const TOKEN_URL = import.meta.env.VITE_API_URL + "/token";
 
@@ -13,7 +12,7 @@ const useAuth = () => {
   const [isAuthenticated, setIsAuthenticated] = useState<boolean>(
     isNotEmpty(localStorage.getItem("token"))
   );
-  const [role, setRole] = useState<Role>("ANONYMOUS");
+  const [role, setRole] = useState<Role>(tokenRole());
 
   const login = async (credentials: Credentials, onSuccess: () => void) => {
     const res = await axios.post(TOKEN_URL, credentials);
@@ -24,11 +23,9 @@ const useAuth = () => {
       return;
     }
 
-    localStorage.setItem("token", res.data.token);
-    const token: JwtData = jwt(res.data.token);
-
     setIsAuthenticated(true);
-    setRole(token.role);
+    saveToken(res.data.token);
+    setRole(tokenRole());
     onSuccess();
   };
 
@@ -36,7 +33,7 @@ const useAuth = () => {
     setIsAuthenticated(false);
     setRole("ANONYMOUS");
 
-    localStorage.removeItem("token");
+    deleteToken();
     onSuccess();
   };
 

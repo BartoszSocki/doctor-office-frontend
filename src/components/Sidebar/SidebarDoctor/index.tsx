@@ -19,7 +19,7 @@ const SidebarDoctor = () => {
           <SidebarLink name={"⚕️ doctor's office"} to={""} key={"a"} />
           <SidebarLink name={"🩺 patients"} to={""} key={"b"} />
           <SidebarLink name={"📂 patients documentation"} to={""} key={"c"} />
-          <SidebarLink name={"📅 planned visits"} to={""} key={"c"} />
+          <SidebarLink name={"📅 planned visits"} to={""} key={"d"} />
         </ul>
       </section>
 

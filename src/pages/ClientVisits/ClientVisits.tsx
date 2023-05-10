@@ -8,9 +8,6 @@ import axios from "axios";
 const CLIENT_VISITS_URL =
   import.meta.env.VITE_API_URL + "/api/client/planned-visits";
 
-const CLIENT_SINGLE_VISIT_URL =
-  import.meta.env.VITE_API_URL + "/api/client/planned-visits/{}";
-
 const ClientVisits = () => {
   const [links, setLinks] = useState({});
   const [plannedVisits, setPlannedVisits] = useState<any[]>([]);
@@ -36,12 +33,9 @@ const ClientVisits = () => {
         {plannedVisits.map((p) => {
           const cancel = async () => {
             console.log("this");
-            await axios.delete(
-              CLIENT_SINGLE_VISIT_URL.replace("{}", p.id.toString()),
-              {
-                headers: { Authorization: `Bearer ${getToken()}` },
-              }
-            );
+            await axios.delete(p._links.self.href, {
+              headers: { Authorization: `Bearer ${getToken()}` },
+            });
           };
           return (
             <PlannedVisit

@@ -1,12 +1,11 @@
-import { getToken } from "@Utils/TokenUtils";
-import "./style.css";
-
-import axios from "axios";
 import usePlannedVisits from "@Hooks/usePlannedVisits";
 import useAuth from "@Hooks/useAuth";
 import PlannedVisitListElem from "@Components/ListElem/PlannedVisitListElem";
-import { useNavigate } from "react-router-dom";
 import { deleteRequest } from "@Utils/FetchUtils";
+import type PlannedVisitData from "@Interfaces/PlannedVisitData";
+import "./style.css";
+
+import { useNavigate } from "react-router-dom";
 
 const PlannedVisits = () => {
   const { plannedVisits } = usePlannedVisits();
@@ -15,8 +14,8 @@ const PlannedVisits = () => {
 
   return (
     <div className="planned-visits">
-      {plannedVisits.map((p) => {
-        const URL = (p as any)._links.self.href as string;
+      {plannedVisits.map((p: PlannedVisitData) => {
+        const URL = p._links.self.href as string;
         const cancel = async () => await deleteRequest(URL);
         const newNote = () => navigate(`/dashboard/notes/new/${p.id}`);
 

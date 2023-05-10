@@ -1,4 +1,3 @@
-import { getToken } from "@Utils/TokenUtils";
 import NoteForm from "@Components/NoteForm/NoteForm";
 
 import { useNavigate, useParams } from "react-router-dom";

@@ -1,10 +1,7 @@
 import { useEffect, useState } from "react";
-import { useActionData } from "react-router-dom";
 import useAuth from "./useAuth";
-import axios from "axios";
-import { getToken } from "@Utils/TokenUtils";
 import { getRequest } from "@Utils/FetchUtils";
-import type PlannedVisitProps from "@Interfaces/PlannedVisitProps";
+import type PlannedVisitData from "@Interfaces/PlannedVisitData";
 
 const URL = {
   DOCTOR: import.meta.env.VITE_API_URL + "/api/doctor/planned-visits",
@@ -13,7 +10,7 @@ const URL = {
 };
 
 const usePlannedVisits = () => {
-  const [plannedVisits, setPlannedVisits] = useState([]);
+  const [plannedVisits, setPlannedVisits] = useState<PlannedVisitData[]>([]);
   const [links, setLinks] = useState([]);
   const { role } = useAuth();
 

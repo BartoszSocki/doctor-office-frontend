@@ -6,8 +6,7 @@ import { FiChevronDown, FiChevronUp } from "react-icons/fi";
 
 const NoteListElem = (props: NoteData & any) => {
   const [isCollapsed, setIsCollapsed] = useState(false);
-  const { id, name, content, dateOfCreation, dateOfModification, onEdit } =
-    props;
+  const { name, content, dateOfCreation, dateOfModification, onEdit } = props;
   const handleExpand = () => {
     setIsCollapsed((v) => !v);
   };

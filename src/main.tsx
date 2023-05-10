@@ -11,9 +11,8 @@ import Dashboard from "@Pages/Dashboard/Dashboard";
 import PlannedVisits from "@Pages/PlannedVisits/PlannedVisits";
 import Notes from "@Pages/Notes/Notes";
 import NoteEdit from "@Pages/Notes/NoteEdit";
-import axios from "axios";
-import { getToken } from "@Utils/TokenUtils";
 import NoteCreate from "@Pages/Notes/NoteCreate";
+import { getRequest } from "@Utils/FetchUtils";
 
 // routing in application
 const router = createBrowserRouter([
@@ -37,13 +36,10 @@ const router = createBrowserRouter([
         path: "/dashboard/notes/:id",
         element: <NoteEdit />,
         loader: async ({ params }) => {
-          return await axios.get(
+          return await getRequest(
             `${import.meta.env.VITE_API_URL}/api/doctor/notes/${
               params.id as string
-            }`,
-            {
-              headers: { Authorization: `Bearer ${getToken()}` },
-            }
+            }`
           );
         },
       },

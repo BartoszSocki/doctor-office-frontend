@@ -2,8 +2,8 @@ import { getToken } from "@Utils/TokenUtils";
 import NoteForm from "@Components/NoteForm/NoteForm";
 
 import { useNavigate, useParams } from "react-router-dom";
-import axios from "axios";
 import "./style.css";
+import { postRequest } from "@Utils/FetchUtils";
 
 const NoteCreate = () => {
   const { id } = useParams();
@@ -16,14 +16,11 @@ const NoteCreate = () => {
   const handleSave = async (formData: any) => {
     console.log(formData);
 
-    await axios.post(
+    await postRequest(
       `${import.meta.env.VITE_API_URL}/api/doctor/notes/planned-visit/${
         id as string
       }`,
-      formData,
-      {
-        headers: { Authorization: `Bearer ${getToken()}` },
-      }
+      formData
     );
     navigate(-1);
   };

@@ -3,6 +3,8 @@ import { useActionData } from "react-router-dom";
 import useAuth from "./useAuth";
 import axios from "axios";
 import { getToken } from "@Utils/TokenUtils";
+import { getRequest } from "@Utils/FetchUtils";
+import type PlannedVisitProps from "@Interfaces/PlannedVisitProps";
 
 const URL = {
   DOCTOR: import.meta.env.VITE_API_URL + "/api/doctor/planned-visits",
@@ -16,9 +18,7 @@ const usePlannedVisits = () => {
   const { role } = useAuth();
 
   const fetchPlannedVisits = async () => {
-    const res = await axios.get(URL[role], {
-      headers: { Authorization: `Bearer ${getToken()}` },
-    });
+    const res = await getRequest(URL[role]);
 
     const links = res.data._links;
     const plannedVisits = res.data._embedded.plannedVisits;

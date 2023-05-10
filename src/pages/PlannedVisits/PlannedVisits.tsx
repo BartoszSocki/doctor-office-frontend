@@ -6,6 +6,7 @@ import usePlannedVisits from "@Hooks/usePlannedVisits";
 import useAuth from "@Hooks/useAuth";
 import PlannedVisitListElem from "@Components/ListElem/PlannedVisitListElem";
 import { useNavigate } from "react-router-dom";
+import { deleteRequest } from "@Utils/FetchUtils";
 
 const PlannedVisits = () => {
   const { plannedVisits } = usePlannedVisits();
@@ -15,15 +16,9 @@ const PlannedVisits = () => {
   return (
     <div className="planned-visits">
       {plannedVisits.map((p) => {
-        const cancel = async () => {
-          await axios.delete(p._links.self.href, {
-            headers: { Authorization: `Bearer ${getToken()}` },
-          });
-        };
-
-        const newNote = () => {
-          navigate(`/dashboard/notes/new/${p.id}`);
-        };
+        const URL = (p as any)._links.self.href as string;
+        const cancel = async () => await deleteRequest(URL);
+        const newNote = () => navigate(`/dashboard/notes/new/${p.id}`);
 
         const user =
           role === "CLIENT"

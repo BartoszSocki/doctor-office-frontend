@@ -43,11 +43,11 @@
 }
 
 .note-date-of-creation {
-  width: 10ch;
+  width: 12ch;
 }
 
-.note-date-of-modiciation {
-  width: 10ch;
+.note-date-of-modification {
+  width: 12ch;
 }
 
 .planned-visit-date {
@@ -84,4 +84,8 @@
   color: blue;
   cursor: pointer;
   scale: 1.5;
+}
+
+.hidden {
+  visibility: hidden;
 }

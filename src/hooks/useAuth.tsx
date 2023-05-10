@@ -10,8 +10,7 @@ import {
   deleteToken,
   isTokenValid,
 } from "@Utils/TokenUtils";
-
-const TOKEN_URL = import.meta.env.VITE_API_URL + "/token";
+import { postRequest } from "@Utils/FetchUtils";
 
 const useAuth = () => {
   const [isAuthenticated, setIsAuthenticated] = useState<boolean>(
@@ -20,7 +19,10 @@ const useAuth = () => {
   const [role, setRole] = useState<Role>(tokenRole());
 
   const login = async (credentials: Credentials, onSuccess: () => void) => {
-    const res = await axios.post(TOKEN_URL, credentials);
+    const res = await postRequest(
+      `${import.meta.env.VITE_API_URL}/token`,
+      credentials
+    );
 
     if (!("token" in res.data)) {
       setIsAuthenticated(false);

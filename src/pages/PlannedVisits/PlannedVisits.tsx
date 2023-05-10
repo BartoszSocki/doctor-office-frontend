@@ -1,15 +1,16 @@
-import usePlannedVisits from "@Hooks/usePlannedVisits";
 import useAuth from "@Hooks/useAuth";
 import PlannedVisitListElem from "@Components/ListElem/PlannedVisitListElem";
 import { deleteRequest } from "@Utils/FetchUtils";
 import type PlannedVisitData from "@Interfaces/PlannedVisitData";
 import "./style.css";
 
-import { useNavigate } from "react-router-dom";
+import { useLoaderData, useNavigate } from "react-router-dom";
 import PlannedVisitsListHeaderElem from "@Components/ListElem/PlannedVisitsListHeaderElem";
 
 const PlannedVisits = () => {
-  const { plannedVisits } = usePlannedVisits();
+  const res = useLoaderData() as any;
+  const plannedVisits = res.data._embedded.plannedVisits;
+
   const { role } = useAuth();
   const navigate = useNavigate();
 
@@ -23,7 +24,7 @@ const PlannedVisits = () => {
         const newNote = () => navigate(`/dashboard/notes/new/${p.id}`);
 
         const user =
-          role === "CLIENT"
+          role === "DOCTOR"
             ? `${p.clientName} ${p.clientSurname}`
             : `dr. ${p.doctorName} ${p.doctorSurname}`;
 
@@ -32,6 +33,7 @@ const PlannedVisits = () => {
             plannedVisit={{
               ...p,
               user,
+              role,
             }}
             onRemove={cancel}
             onCreate={newNote}

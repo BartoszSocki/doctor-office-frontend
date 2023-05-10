@@ -1,12 +1,13 @@
 import NoteListElem from "@Components/ListElem/NoteListElem";
-import useNotes from "@Hooks/useNotes";
-import { useNavigate } from "react-router-dom";
+import { useLoaderData, useNavigate } from "react-router-dom";
 import "./style.css";
 import NoteListHeaderElem from "@Components/ListElem/NoteListHeaderElem";
 
 const Notes = () => {
-  const { notes } = useNotes();
   const navigate = useNavigate();
+
+  const res = useLoaderData() as any;
+  const notes = res.data._embedded.notes;
 
   return (
     <div>

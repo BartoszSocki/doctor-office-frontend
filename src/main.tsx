@@ -13,6 +13,7 @@ import Notes from "@Pages/Notes/Notes";
 import NoteEdit from "@Pages/Notes/NoteEdit";
 import NoteCreate from "@Pages/Notes/NoteCreate";
 import { getRequest } from "@Utils/FetchUtils";
+import ClientsList from "@Pages/Clients/ClientsList";
 
 // routing in application
 const router = createBrowserRouter([
@@ -25,12 +26,53 @@ const router = createBrowserRouter([
     element: <Dashboard />,
     children: [
       {
-        path: "/dashboard/planned-visits",
+        path: "/dashboard/client/planned-visits",
         element: <PlannedVisits />,
+        loader: async () => {
+          return await getRequest(
+            `${import.meta.env.VITE_API_URL}/api/client/planned-visits`
+          );
+        },
+      },
+      {
+        path: "/dashboard/doctor/planned-visits",
+        element: <PlannedVisits />,
+        loader: async () => {
+          return await getRequest(
+            `${import.meta.env.VITE_API_URL}/api/doctor/planned-visits`
+          );
+        },
+      },
+      {
+        path: "/dashboard/doctor/planned-visits/:id",
+        element: <PlannedVisits />,
+        loader: async ({ params }) => {
+          return await getRequest(
+            `${import.meta.env.VITE_API_URL}/api/client/${
+              params.id as string
+            }/planned-visits`
+          );
+        },
       },
       {
         path: "/dashboard/notes",
         element: <Notes />,
+        loader: async () => {
+          return await getRequest(
+            `${import.meta.env.VITE_API_URL}/api/doctor/notes`
+          );
+        },
+      },
+      {
+        path: "/dashboard/notes/:id",
+        element: <Notes />,
+        loader: async ({ params }) => {
+          return await getRequest(
+            `${import.meta.env.VITE_API_URL}/api/doctor/notes/client/${
+              params.id as string
+            }`
+          );
+        },
       },
       {
         path: "/dashboard/notes/:id",
@@ -46,6 +88,15 @@ const router = createBrowserRouter([
       {
         path: "/dashboard/notes/new/:id",
         element: <NoteCreate />,
+      },
+      {
+        path: "/dashboard/clients",
+        element: <ClientsList />,
+        loader: async ({ request }) => {
+          return await getRequest(
+            `${import.meta.env.VITE_API_URL}/api/doctor/clients`
+          );
+        },
       },
     ],
   },

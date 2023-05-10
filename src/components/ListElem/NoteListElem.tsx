@@ -4,9 +4,10 @@ import "./style.css";
 import { useState } from "react";
 import { FiChevronDown, FiChevronUp } from "react-icons/fi";
 
-const NoteListElem = (props: NoteData) => {
+const NoteListElem = (props: NoteData & any) => {
   const [isCollapsed, setIsCollapsed] = useState(false);
-  const { id, name, content, dateOfCreation, dateOfModification } = props;
+  const { id, name, content, dateOfCreation, dateOfModification, onEdit } =
+    props;
   const handleExpand = () => {
     setIsCollapsed((v) => !v);
   };
@@ -15,15 +16,15 @@ const NoteListElem = (props: NoteData) => {
     <ListElem>
       <div className="note-wrapper">
         <section className="note-info">
-          <div onClick={handleExpand}>
+          <div className="note-collapse" onClick={handleExpand}>
             {isCollapsed ? <FiChevronUp /> : <FiChevronDown />}
           </div>
-          <div>{name}</div>
+          <div className="note-name">{name}</div>
           <div className="list-elem-space" />
-          <div>{dateOfCreation}</div>
-          <div>{dateOfModification}</div>
+          <div className="note-date-of-creation">{dateOfCreation}</div>
+          <div className="note-date-of-modification">{dateOfModification}</div>
           <nav className="list-elem-actions">
-            <EditButton>edit</EditButton>
+            <EditButton onClick={onEdit}>edit</EditButton>
           </nav>
         </section>
         {isCollapsed ? (

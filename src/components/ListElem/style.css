@@ -22,6 +22,7 @@
 .note-wrapper {
   display: flex;
   flex-direction: column;
+  width: 100%;
 }
 
 .note-info {
@@ -30,6 +31,53 @@
   gap: 2.5ch;
 }
 
-.note-content {
+.note-name {
+  width: 40ch;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 
+.note-date-of-creation {
+  width: 10ch;
+}
+
+.note-date-of-modiciation {
+  width: 10ch;
+}
+
+.planned-visit-date {
+  width: 10ch;
+}
+
+.planned-visit-duration {
+  width: 12ch;
+}
+
+.planned-visit-street {
+  width: 16ch;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.planned-visit-user {
+  width: 24ch;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.planned-visit-status {
+  width: 10ch;
+}
+
+.note-content {
+  margin-block-start: 1ch;
+}
+
+.note-collapse {
+  color: blue;
+  cursor: pointer;
+  scale: 1.5;
 }

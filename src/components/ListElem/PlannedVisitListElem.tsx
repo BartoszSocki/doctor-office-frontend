@@ -1,3 +1,4 @@
+import CreateButton from "@Components/Buttons/CreateButton";
 import EditButton from "@Components/Buttons/EditButton";
 import RemoveButton from "@Components/Buttons/RemoveButton";
 import ListElem from "@Components/ListElem/ListElem";
@@ -15,13 +16,14 @@ const PlannedVisitListElem = (props: any) => {
 
   return (
     <ListElem>
-      <div className="">{date}</div>
-      <em className="">{duration}</em>
-      <div className="">{street}</div>
-      <div className="">{user}</div>
-      <div className="">{cancelledMessage}</div>
+      <div className="planned-visit-date">{date}</div>
+      <em className="planned-visit-duration">{duration}</em>
+      <div className="planned-visit-street">{street}</div>
+      <div className="planned-visit-user">{user}</div>
+      <div className="planned-visit-status">{cancelledMessage}</div>
       <div className="list-elem-space" />
       <nav className="list-elem-actions">
+        <CreateButton>new note</CreateButton>
         <EditButton>edit</EditButton>
         <RemoveButton onClick={() => onRemove()}>cancel</RemoveButton>
       </nav>

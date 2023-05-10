@@ -13,6 +13,7 @@ import Notes from "@Pages/Notes/Notes";
 import NoteEdit from "@Pages/Notes/NoteEdit";
 import axios from "axios";
 import { getToken } from "@Utils/TokenUtils";
+import NoteCreate from "@Pages/Notes/NoteCreate";
 
 // routing in application
 const router = createBrowserRouter([
@@ -35,15 +36,20 @@ const router = createBrowserRouter([
       {
         path: "/dashboard/notes/:id",
         element: <NoteEdit />,
-        loader: async ({ request }) => {
-          const id = request.url.split("/").at(-1);
+        loader: async ({ params }) => {
           return await axios.get(
-            `${import.meta.env.VITE_API_URL}/api/doctor/notes/${id as string}`,
+            `${import.meta.env.VITE_API_URL}/api/doctor/notes/${
+              params.id as string
+            }`,
             {
               headers: { Authorization: `Bearer ${getToken()}` },
             }
           );
         },
+      },
+      {
+        path: "/dashboard/notes/new/:id",
+        element: <NoteCreate />,
       },
     ],
   },

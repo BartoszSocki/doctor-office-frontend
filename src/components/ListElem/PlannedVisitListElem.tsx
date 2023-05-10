@@ -4,8 +4,9 @@ import RemoveButton from "@Components/Buttons/RemoveButton";
 import ListElem from "@Components/ListElem/ListElem";
 
 const PlannedVisitListElem = (props: any) => {
-  const { day, begTime, endTime, street, user, cancelled } = props.plannedVisit;
-  const onRemove = props.onRemove;
+  const { id, day, begTime, endTime, street, user, cancelled } =
+    props.plannedVisit;
+  const { onRemove, onCreate } = props;
 
   const begTimeFormated: string = begTime.substring(0, begTime.length - 3);
   const endTimeFormated: string = endTime.substring(0, endTime.length - 3);
@@ -23,8 +24,8 @@ const PlannedVisitListElem = (props: any) => {
       <div className="planned-visit-status">{cancelledMessage}</div>
       <div className="list-elem-space" />
       <nav className="list-elem-actions">
-        <CreateButton>new note</CreateButton>
-        <EditButton>edit</EditButton>
+        <CreateButton onClick={() => onCreate(id)}>new note</CreateButton>
+        {/* <EditButton onClick=>edit</EditButton> */}
         <RemoveButton onClick={() => onRemove()}>cancel</RemoveButton>
       </nav>
     </ListElem>

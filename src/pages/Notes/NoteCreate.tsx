@@ -1,22 +1,25 @@
 import { getToken } from "@Utils/TokenUtils";
 import NoteForm from "@Components/NoteForm/NoteForm";
 
-import { useLoaderData, useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 import "./style.css";
 
-const NoteEdit = () => {
-  const data = useLoaderData() as any;
+const NoteCreate = () => {
+  const { id } = useParams();
   const navigate = useNavigate();
-  const { content, name, id } = data.data;
 
   const handleCancel = () => {
     navigate(-1);
   };
 
   const handleSave = async (formData: any) => {
-    await axios.put(
-      `${import.meta.env.VITE_API_URL}/api/doctor/notes/${id as string}`,
+    console.log(formData);
+
+    await axios.post(
+      `${import.meta.env.VITE_API_URL}/api/doctor/notes/planned-visit/${
+        id as string
+      }`,
       formData,
       {
         headers: { Authorization: `Bearer ${getToken()}` },
@@ -27,12 +30,12 @@ const NoteEdit = () => {
 
   return (
     <NoteForm
-      name={name}
-      content={content}
+      name={"new note..."}
+      content={"content..."}
       onSave={handleSave}
       onCancel={handleCancel}
     />
   );
 };
 
-export default NoteEdit;
+export default NoteCreate;

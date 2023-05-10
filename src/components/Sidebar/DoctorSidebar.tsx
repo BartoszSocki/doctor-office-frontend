@@ -16,12 +16,20 @@ const DoctorSidebar = () => {
 
       <section className="sidebar-body">
         <ul className="sidebar-body-flex">
-          <SidebarLink name={"⚕️ doctor's office"} to={""} key={"a"} />
+          <SidebarLink
+            name={"⚕️ doctor's office"}
+            to={"/dashboard/office"}
+            key={"a"}
+          />
           <SidebarLink name={"🩺 patients"} to={""} key={"b"} />
-          <SidebarLink name={"📂 patients documentation"} to={""} key={"c"} />
+          <SidebarLink
+            name={"📂 patients documentation"}
+            to={"/dashboard/notes"}
+            key={"c"}
+          />
           <SidebarLink
             name={"📅 planned visits"}
-            to={"/dashboard/doctor/planned-visits"}
+            to={"/dashboard/planned-visits"}
             key={"d"}
           />
         </ul>

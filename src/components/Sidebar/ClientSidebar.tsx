@@ -20,7 +20,7 @@ const ClientSidebar = () => {
           {/* <SidebarLink name={"🔎 search visits"} to={""} key={"c"} /> */}
           <SidebarLink
             name={"📅 planned visits"}
-            to={"/dashboard/client/planned-visits"}
+            to={"/dashboard/planned-visits"}
             key={"c"}
           />
         </ul>

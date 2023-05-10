@@ -1,10 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 
-// components/pages
-import VisitPlanner from "@Pages/DoctorOffice/VisitPlanner";
-import VisitModal from "@Components/Modals/VisitModal";
-
 // utils
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
@@ -12,8 +8,8 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./index.css";
 import Login from "@Pages/Login/Login";
 import Dashboard from "@Pages/Dashboard/Dashboard";
-import ClientVisits from "@Pages/ClientVisits/ClientVisits";
-import DoctorVisits from "@Pages/DoctorVisits/DoctorVisits";
+import PlannedVisits from "@Pages/PlannedVisits/PlannedVisits";
+import Notes from "@Pages/Notes/Notes";
 
 // routing in application
 const router = createBrowserRouter([
@@ -26,12 +22,12 @@ const router = createBrowserRouter([
     element: <Dashboard />,
     children: [
       {
-        path: "/dashboard/client/planned-visits",
-        element: <ClientVisits />,
+        path: "/dashboard/planned-visits",
+        element: <PlannedVisits />,
       },
       {
-        path: "/dashboard/doctor/planned-visits",
-        element: <DoctorVisits />,
+        path: "/dashboard/notes",
+        element: <Notes />,
       },
     ],
   },

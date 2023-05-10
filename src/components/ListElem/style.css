@@ -1,0 +1,35 @@
+.list-elem-wrapper {
+  display: flex;
+  gap: 2.5ch;
+  padding-block: 0.8rem;
+  border-bottom: 1px solid black;
+
+  &:last-child {
+    border-bottom: none;
+  }
+}
+
+.list-elem-space {
+  flex-grow: 1;
+}
+
+.list-elem-actions {
+  display: flex;
+  flex-direction: row;
+  gap: 1.5ch;
+}
+
+.note-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.note-info {
+  display: flex;
+  flex-direction: row;
+  gap: 2.5ch;
+}
+
+.note-content {
+
+}

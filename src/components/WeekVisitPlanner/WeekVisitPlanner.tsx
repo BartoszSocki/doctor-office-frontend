@@ -2,6 +2,7 @@ import { useState } from "react";
 import DayVisitPlanner from "../DayVisitScheduler/DayVisitScheduler";
 import PlannedVisit from "../PlannedVisit/PlannedVisit";
 import "./style.css";
+import PlannedVisitListElem from "@Components/ListElem/PlannedVisitListElem";
 
 const exampleJSON = {
   monday: [

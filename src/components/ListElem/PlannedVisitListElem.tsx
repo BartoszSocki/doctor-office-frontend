@@ -1,8 +1,8 @@
 import EditButton from "@Components/Buttons/EditButton";
-import "./style.css";
 import RemoveButton from "@Components/Buttons/RemoveButton";
+import ListElem from "@Components/ListElem/ListElem";
 
-const PlannedVisit = (props: any) => {
+const PlannedVisitListElem = (props: any) => {
   const { day, begTime, endTime, street, user, cancelled } = props.plannedVisit;
   const onRemove = props.onRemove;
 
@@ -14,19 +14,19 @@ const PlannedVisit = (props: any) => {
   const cancelledMessage = (cancelled as boolean) ? "cancelled" : "active";
 
   return (
-    <div className="visit-wrapper">
+    <ListElem>
       <div className="">{date}</div>
       <em className="">{duration}</em>
       <div className="">{street}</div>
       <div className="">{user}</div>
       <div className="">{cancelledMessage}</div>
-      <div className="visit-space" />
-      <div className="visit-actions">
+      <div className="list-elem-space" />
+      <nav className="list-elem-actions">
         <EditButton>edit</EditButton>
         <RemoveButton onClick={() => onRemove()}>cancel</RemoveButton>
-      </div>
-    </div>
+      </nav>
+    </ListElem>
   );
 };
 
-export default PlannedVisit;
+export default PlannedVisitListElem;

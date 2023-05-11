@@ -1,6 +1,6 @@
 import { FiChevronUp } from "react-icons/fi";
-import ListElem from "./ListElem";
-import "./style.css";
+import ListElem from "../ListElem";
+import "../style.css";
 import EditButton from "@Components/Buttons/EditButton";
 
 const NoteListHeaderElem = () => {

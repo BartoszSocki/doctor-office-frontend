@@ -90,10 +90,14 @@
   visibility: hidden;
 }
 
-.client-name {
+.client-name, .doctor-name {
   width: 16ch;
 }
 
-.client-surname {
+.client-surname, .doctor-surname {
   width: 32ch;
+}
+
+.doctor-specialization {
+  width: 20ch;
 }

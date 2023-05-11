@@ -14,6 +14,7 @@ import NoteEdit from "@Pages/Notes/NoteEdit";
 import NoteCreate from "@Pages/Notes/NoteCreate";
 import { getRequest } from "@Utils/FetchUtils";
 import ClientsList from "@Pages/Clients/ClientsList";
+import DoctorsList from "@Pages/Doctors/DoctorsList";
 
 // routing in application
 const router = createBrowserRouter([
@@ -95,6 +96,17 @@ const router = createBrowserRouter([
         loader: async ({ request }) => {
           return await getRequest(
             `${import.meta.env.VITE_API_URL}/api/doctor/clients`
+          );
+        },
+      },
+      {
+        path: "/dashboard/doctors",
+        element: <DoctorsList />,
+        loader: async ({ request }) => {
+          const options = request.url.split("?").at(1) ?? "";
+
+          return await getRequest(
+            `${import.meta.env.VITE_API_URL}/api/doctors?${options}`
           );
         },
       },

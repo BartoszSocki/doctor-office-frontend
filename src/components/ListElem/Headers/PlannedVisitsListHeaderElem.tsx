@@ -1,5 +1,5 @@
-import ListElem from "./ListElem";
-import "./style.css";
+import ListElem from "../ListElem";
+import "../style.css";
 
 const PlannedVisitsListHeaderElem = (props: any) => {
   const { role } = props;

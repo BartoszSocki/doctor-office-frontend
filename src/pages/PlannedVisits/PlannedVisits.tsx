@@ -5,7 +5,7 @@ import type PlannedVisitData from "@Interfaces/PlannedVisitData";
 import "./style.css";
 
 import { useLoaderData, useNavigate } from "react-router-dom";
-import PlannedVisitsListHeaderElem from "@Components/ListElem/PlannedVisitsListHeaderElem";
+import PlannedVisitsListHeaderElem from "@Components/ListElem/Headers/PlannedVisitsListHeaderElem";
 
 const PlannedVisits = () => {
   const res = useLoaderData() as any;

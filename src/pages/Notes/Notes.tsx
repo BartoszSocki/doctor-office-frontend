@@ -1,7 +1,7 @@
 import NoteListElem from "@Components/ListElem/NoteListElem";
 import { useLoaderData, useNavigate } from "react-router-dom";
 import "./style.css";
-import NoteListHeaderElem from "@Components/ListElem/NoteListHeaderElem";
+import NoteListHeaderElem from "@Components/ListElem/Headers/NoteListHeaderElem";
 
 const Notes = () => {
   const navigate = useNavigate();

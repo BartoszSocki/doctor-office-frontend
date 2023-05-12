@@ -7,7 +7,7 @@ const Notes = () => {
   const navigate = useNavigate();
 
   const res = useLoaderData() as any;
-  const notes = res.data._embedded.notes;
+  const notes = res.data._embedded?.notes ?? [];
 
   return (
     <div>

@@ -9,7 +9,7 @@ import PlannedVisitsListHeaderElem from "@Components/ListElem/Headers/PlannedVis
 
 const PlannedVisits = () => {
   const res = useLoaderData() as any;
-  const plannedVisits = res.data._embedded.plannedVisits;
+  const plannedVisits = res.data._embedded?.plannedVisits ?? [];
 
   const { role } = useAuth();
   const navigate = useNavigate();

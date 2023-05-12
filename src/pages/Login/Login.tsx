@@ -59,8 +59,11 @@ const Login = () => {
             login
           </button>
         </form>
-        <Link to={"/register"} className="login-btn-register">
-          register
+        <Link to={"/register/client"} className="login-btn-register">
+          register as client
+        </Link>
+        <Link to={"/register/doctor"} className="login-btn-register">
+          register as doctor
         </Link>
       </div>
     </div>

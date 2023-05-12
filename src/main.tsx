@@ -15,12 +15,22 @@ import NoteCreate from "@Pages/Notes/NoteCreate";
 import { getRequest } from "@Utils/FetchUtils";
 import ClientsList from "@Pages/Clients/ClientsList";
 import DoctorsList from "@Pages/Doctors/DoctorsList";
+import ClientRegistrationForm from "@Pages/Register/ClientRegistrationForm";
+import DoctorRegistrationForm from "@Pages/Register/DoctorRegistrationForm";
 
 // routing in application
 const router = createBrowserRouter([
   {
     path: "/login",
     element: <Login />,
+  },
+  {
+    path: "/register/client",
+    element: <ClientRegistrationForm />,
+  },
+  {
+    path: "/register/doctor",
+    element: <DoctorRegistrationForm />,
   },
   {
     path: "/dashboard",

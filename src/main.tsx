@@ -17,6 +17,8 @@ import ClientsList from "@Pages/Clients/ClientsList";
 import DoctorsList from "@Pages/Doctors/DoctorsList";
 import ClientRegistrationForm from "@Pages/Register/ClientRegistrationForm";
 import DoctorRegistrationForm from "@Pages/Register/DoctorRegistrationForm";
+import VisitScheduler from "@Pages/VisitScheduler/VisitScheduler";
+import DayVisitSchedulerForm from "@Pages/VisitScheduler/DayVisitSchedulerForm";
 
 // routing in application
 const router = createBrowserRouter([
@@ -44,6 +46,19 @@ const router = createBrowserRouter([
             `${import.meta.env.VITE_API_URL}/api/client/planned-visits`
           );
         },
+      },
+      {
+        path: "/dashboard/doctor/scheduled-visits",
+        element: <VisitScheduler />,
+        loader: async () => {
+          return await getRequest(
+            `${import.meta.env.VITE_API_URL}/api/doctor/scheduled-visits`
+          );
+        },
+      },
+      {
+        path: "/dashboard/doctor/scheduled-visits/new",
+        element: <DayVisitSchedulerForm />,
       },
       {
         path: "/dashboard/doctor/planned-visits",

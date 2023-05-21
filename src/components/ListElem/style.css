@@ -101,3 +101,23 @@
 .doctor-specialization {
   width: 20ch;
 }
+
+.scheduled-visit-beg-time {
+  width: 10ch;
+}
+
+.scheduled-visit-end-time {
+  width: 10ch;
+}
+
+.scheduled-visit-address {
+  width: 30ch;
+}
+
+.scheduled-visit-type {
+  width: 20ch;
+}
+
+.scheduled-visit-price {
+  width: 8ch;
+}

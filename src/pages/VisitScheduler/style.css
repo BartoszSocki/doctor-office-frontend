@@ -1,0 +1,63 @@
+.day-visit-scheduler-nav {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  align-items: center;
+  padding-bottom: 0.5rem;
+}
+
+.day-visit-scheduler-space {
+  flex-grow: 1;
+}
+
+.day-visit-scheduler-collapse {
+  color: blue;
+  cursor: pointer;
+  scale: 1.5;
+}
+
+.visit-scheduler-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1ch;
+}
+
+.day-visit-scheduler-wrapper {
+  border-bottom: 4px solid black;
+
+  &:last-child {
+    border-bottom: none;
+  }
+}
+
+.day-visit-scheduler-form-section {
+  display: flex;
+  flex-direction: column;
+  max-width: 20rem;
+
+  & > input {
+    width: fit-content;
+    display: inline-block;
+    font-size: 1rem;
+    padding: 0.4rem 0.4rem;
+    letter-spacing: 0.04ch;
+  }
+
+  & > input[type="text"], input[type="password"] {
+    width: 100%;
+  }
+
+}
+
+.day-visit-scheduler-form-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8ch;
+}
+
+
+.day-visit-scheduler-form-actions {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}

@@ -18,7 +18,7 @@ const DoctorSidebar = () => {
         <ul className="sidebar-body-flex">
           <SidebarLink
             name={"⚕️ visit planner"}
-            to={"/dashboard/visit-planner"}
+            to={"/dashboard/doctor/scheduled-visits"}
             key={"a"}
           />
           <SidebarLink

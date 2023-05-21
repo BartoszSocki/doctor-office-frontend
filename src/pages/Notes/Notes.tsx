@@ -13,7 +13,7 @@ const Notes = () => {
     <div>
       <h1 className="notes-header">Notes</h1>
       <NoteListHeaderElem />
-      {notes.map((n) => {
+      {notes.map((n: NoteData) => {
         const handleEdit = () => {
           navigate(`/dashboard/notes/${n.id}`);
         };

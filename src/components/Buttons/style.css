@@ -1,4 +1,13 @@
-.app-button {
+:root {
+  --primary-green: #009100;
+  --primary-red: #d85959;
+  --primary-blue: #0000ff;
+  --primary-green-dark: #007900;
+  --primary-red-dark: #bd0000;
+  --primary-blue-dark: #0000d5;
+}
+
+.app-btn {
   border: 1px solid transparent;
   background: transparent;
   display: inline-block;
@@ -12,25 +21,25 @@
 }
 
 .app-btn--remove {
-  color: rgb(216, 89, 89);
+  color: var(--primary-red);
 
   &:hover {
-    color: #bd0000;
+    color: var(--primary-red-dark);
   }
 }
 
 .app-btn--edit {
-  color: blue;
+  color: var(--primary-blue);
 
   &:hover {
-    color: #0000d0;
+    color: var(--primary-blue-dark)s;
   }
 }
 
 .app-btn--create {
-  color: #009100;
+  color: var(--primary-green);
 
   &:hover {
-    color: #007900;
+    color: var(--primary-green-dark);
   }
 }

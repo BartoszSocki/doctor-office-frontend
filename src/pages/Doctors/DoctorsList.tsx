@@ -4,6 +4,7 @@ import type DoctorSearchData from "@Interfaces/DoctorSearchData";
 import { Link, useLoaderData, useNavigate } from "react-router-dom";
 
 import "./style.css";
+import NavigationFooter from "@Components/Pageable/NavigaionFooter";
 
 const DoctorsList = () => {
   const res = useLoaderData() as any;
@@ -26,44 +27,9 @@ const DoctorsList = () => {
         })}
       </div>
 
-      <div className="pageable-actions">
-        {"first" in links ? (
-          <Link
-            to={`/dashboard/doctors?${
-              links.first.href.split("?").at(1) as string
-            }`}
-          >
-            {"<<"} first
-          </Link>
-        ) : null}
-        {"prev" in links ? (
-          <Link
-            to={`/dashboard/doctors?${
-              links.prev.href.split("?").at(1) as string
-            }`}
-          >
-            {"<"} prev
-          </Link>
-        ) : null}
-        {"next" in links ? (
-          <Link
-            to={`/dashboard/doctors?${
-              links.next.href.split("?").at(1) as string
-            }`}
-          >
-            next {">"}
-          </Link>
-        ) : null}
-        {"last" in links ? (
-          <Link
-            to={`/dashboard/doctors?${
-              links.last.href.split("?").at(1) as string
-            }`}
-          >
-            last {">>"}
-          </Link>
-        ) : null}
-      </div>
+      <div style={{ flexGrow: "1" }} />
+
+      <NavigationFooter {...links} url="/dashboard/doctors" />
     </>
   );
 };

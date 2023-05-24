@@ -16,7 +16,7 @@ const Dashboard = () => {
   }, []);
 
   return (
-    <div>
+    <div className="dashboard">
       <div className="dashboard-screen-split">
         <div className="dashboard-left-panel-wrapper">
           <Sidebar />

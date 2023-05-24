@@ -25,11 +25,7 @@ const Sidebar = () => {
       <div className="sidebar__space" />
 
       <section className="sidebar__footer">
-        <SidebarButton
-          name={"🔒 log out"}
-          key={"bb"}
-          onClickHandler={handleLogout}
-        />
+        <SidebarButton name={"🔒 log out"} key={"bb"} onClick={handleLogout} />
       </section>
     </>
   );

@@ -1,12 +1,17 @@
-import type SidebarLinkProps from "@Interfaces/SidebarLinkProps";
-import { Link } from "react-router-dom";
+import { Link, type LinkProps } from "react-router-dom";
 
 import "./style.css";
 
-const SidebarLink = ({ name, to }: SidebarLinkProps) => {
+interface ISidebarLinkProps
+  extends LinkProps,
+    React.RefAttributes<HTMLAnchorElement> {
+  name: string;
+}
+
+const SidebarLink = ({ name, ...rest }: ISidebarLinkProps) => {
   return (
     <li>
-      <Link className="sidebar__elem" to={to}>
+      <Link className="sidebar__elem" {...rest}>
         {name}
       </Link>
     </li>

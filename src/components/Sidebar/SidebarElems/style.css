@@ -1,3 +1,11 @@
+:root {
+  --primary-sidebar-elem-brd: #befcff;
+  --primary-sidebar-elem-clr: #f5ffff;
+  --primary-sidebar-elem-brd-darker: #5ae1d4;
+  --primary-sidebar-elem-clr-darker: #dbffff;
+  --sidebar-elem-text-clr: #000;
+}
+
 .sidebar__elem {
   padding: 1rem;
   width: 100%;
@@ -5,26 +13,20 @@
 
   display: inline-block;
 
-  border: 1px solid transparent;
+  border: 1px solid var(--primary-sidebar-elem-brd);
   border-radius: 0.8rem;
-  border-color: #befcff;
 
-  background: #f5ffff;
-
+  background: var(--primary-sidebar-elem-clr);
   cursor: pointer;
 
   text-align: left;
   font-size: 1rem;
 
   text-decoration: none;
-  color: black;
+  color: var(--sidebar-elem-text-clr);
 
   &:hover {
-    background: #dbffff;
-    border-color: #5ae1d4;
-  }
-
-  &:active {
-    color: black;
+    background: var(--primary-sidebar-elem-clr-darker);
+    border-color: var(--primary-sidebar-elem-brd-darker);
   }
 }

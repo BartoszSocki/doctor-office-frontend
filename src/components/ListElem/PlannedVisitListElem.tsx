@@ -1,4 +1,4 @@
-import GreenButton from "@Components/Buttons/CreateButton";
+import CreateButton from "@Components/Buttons/CreateButton";
 import RemoveButton from "@Components/Buttons/RemoveButton";
 import ListElem from "@Components/ListElem/ListElem";
 
@@ -24,7 +24,7 @@ const PlannedVisitListElem = (props: any) => {
       <div className="list-elem-space" />
       <nav className="list-elem-actions">
         {role === "DOCTOR" ? (
-          <GreenButton onClick={() => onCreate(id)}>new note</GreenButton>
+          <CreateButton onClick={() => onCreate(id)}>new note</CreateButton>
         ) : null}
         <RemoveButton onClick={() => onRemove()}>cancel</RemoveButton>
       </nav>

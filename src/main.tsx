@@ -19,6 +19,7 @@ import ClientRegistrationForm from "@Pages/Register/ClientRegistrationForm";
 import DoctorRegistrationForm from "@Pages/Register/DoctorRegistrationForm";
 import VisitScheduler from "@Pages/VisitScheduler/VisitScheduler";
 import DayVisitSchedulerForm from "@Pages/VisitScheduler/DayVisitSchedulerForm";
+import { getAllNotes, getDoctorNotesAboutClientWithId } from "@Utils/ApiUtils";
 
 // routing in application
 const router = createBrowserRouter([
@@ -84,20 +85,14 @@ const router = createBrowserRouter([
         path: "/dashboard/notes",
         element: <Notes />,
         loader: async () => {
-          return await getRequest(
-            `${import.meta.env.VITE_API_URL}/api/doctor/notes`
-          );
+          return await getAllNotes();
         },
       },
       {
         path: "/dashboard/notes/:id",
         element: <Notes />,
         loader: async ({ params }) => {
-          return await getRequest(
-            `${import.meta.env.VITE_API_URL}/api/doctor/notes/client/${
-              params.id as string
-            }`
-          );
+          return await getDoctorNotesAboutClientWithId(params.id as string);
         },
       },
       {

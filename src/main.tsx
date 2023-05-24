@@ -12,7 +12,6 @@ import PlannedVisits from "@Pages/PlannedVisits/PlannedVisits";
 import Notes from "@Pages/Notes/Notes";
 import NoteCreate from "@Pages/Notes/NoteCreate";
 import { getRequest } from "@Utils/FetchUtils";
-import ClientsList from "@Pages/Clients/ClientsList";
 import DoctorsList from "@Pages/Doctors/DoctorsList";
 import ClientRegistrationForm from "@Pages/Register/ClientRegistrationForm";
 import DoctorRegistrationForm from "@Pages/Register/DoctorRegistrationForm";
@@ -20,6 +19,7 @@ import VisitScheduler from "@Pages/VisitScheduler/VisitScheduler";
 import DayVisitSchedulerForm from "@Pages/VisitScheduler/DayVisitSchedulerForm";
 import { getAllNotes, getDoctorNotesAboutClientWithId } from "@Utils/ApiUtils";
 import NoteEdit from "@Pages/Notes/NoteEdit";
+import Clients from "@Pages/Clients/Clients";
 
 // routing in application
 const router = createBrowserRouter([
@@ -112,7 +112,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/dashboard/clients",
-        element: <ClientsList />,
+        element: <Clients />,
         loader: async ({ request }) => {
           return await getRequest(
             `${import.meta.env.VITE_API_URL}/api/doctor/clients`

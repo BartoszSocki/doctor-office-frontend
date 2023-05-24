@@ -1,3 +1,27 @@
-.clients-header {
+.clients__header {
   margin-bottom: 1rem;
+}
+
+.client {
+  display: grid;
+
+  grid-template-columns: 20ch 20ch auto min-content min-content;;
+  align-items: center;
+
+  border-bottom: 1px solid black;
+  padding-bottom: var(--default-list-items-gap);
+
+  &:last-of-type {
+    border-bottom: none;
+  }
+}
+
+.client > *:not(:last-child) {
+  margin-right: var(--default-list-elements-gap);
+}
+
+.clients__list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--default-list-items-gap);
 }

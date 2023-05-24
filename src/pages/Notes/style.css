@@ -17,7 +17,7 @@
   }
 }
 
-.note > *:not(button) {
+.note > *:not(:last-child) {
   margin-right: var(--default-list-elements-gap);
 }
 

@@ -1,7 +1,8 @@
-import NoteListElem from "@Components/ListElem/NoteListElem";
 import { useLoaderData, useNavigate } from "react-router-dom";
+
 import "./style.css";
-import NoteListHeaderElem from "@Components/ListElem/Headers/NoteListHeaderElem";
+import NotesList from "@Pages/Notes/NotesList";
+import Note from "@Pages/Notes/Note";
 
 const Notes = () => {
   const navigate = useNavigate();
@@ -12,13 +13,14 @@ const Notes = () => {
   return (
     <div>
       <h1 className="notes-header">Notes</h1>
-      <NoteListHeaderElem />
-      {notes.map((n: NoteData) => {
-        const handleEdit = () => {
-          navigate(`/dashboard/notes/${n.id}`);
-        };
-        return <NoteListElem {...n} key={n.id} onEdit={handleEdit} />;
-      })}
+      <NotesList>
+        {notes.map((n: NoteData) => {
+          const handleEdit = () => {
+            navigate(`/dashboard/notes/${n.id}/edit`);
+          };
+          return <Note {...n} key={n.id} onEdit={handleEdit} />;
+        })}
+      </NotesList>
     </div>
   );
 };

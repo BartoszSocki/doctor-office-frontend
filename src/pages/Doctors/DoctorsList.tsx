@@ -2,6 +2,7 @@ import DoctorListElem from "@Components/ListElem/DoctorListElem";
 import DoctorListHeaderElem from "@Components/ListElem/Headers/DoctorListHeaderElem";
 import type DoctorSearchData from "@Interfaces/DoctorSearchData";
 import { Link, useLoaderData, useNavigate } from "react-router-dom";
+
 import "./style.css";
 
 const DoctorsList = () => {
@@ -10,8 +11,6 @@ const DoctorsList = () => {
 
   const { doctors } = res.data._embedded;
   const links = res.data._links;
-
-  console.log(links);
 
   return (
     <>
@@ -26,6 +25,7 @@ const DoctorsList = () => {
           return <DoctorListElem doctor={d} onVisits={onVisits} key={d.id} />;
         })}
       </div>
+
       <div className="pageable-actions">
         {"first" in links ? (
           <Link

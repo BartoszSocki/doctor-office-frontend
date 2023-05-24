@@ -96,7 +96,7 @@ const router = createBrowserRouter([
         },
       },
       {
-        path: "/dashboard/notes/:id",
+        path: "/dashboard/notes/:id/edit",
         element: <NoteEdit />,
         loader: async ({ params }) => {
           return await getRequest(

@@ -1,8 +1,7 @@
-import { getToken } from "@Utils/TokenUtils";
 import NoteForm from "@Components/NoteForm/NoteForm";
-
 import { useLoaderData, useNavigate } from "react-router-dom";
-import axios from "axios";
+import { updateNote } from "@Utils/ApiUtils";
+
 import "./style.css";
 
 const NoteEdit = () => {
@@ -15,13 +14,7 @@ const NoteEdit = () => {
   };
 
   const handleSave = async (formData: any) => {
-    await axios.put(
-      `${import.meta.env.VITE_API_URL}/api/doctor/notes/${id as string}`,
-      formData,
-      {
-        headers: { Authorization: `Bearer ${getToken()}` },
-      }
-    );
+    await updateNote(id as string, formData);
     navigate(-1);
   };
 

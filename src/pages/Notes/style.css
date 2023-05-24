@@ -1,25 +1,33 @@
-.note-edit-wrapper {
+:root {
+  --default-list-items-gap: 0.5rem;
+  --default-list-elements-gap: 1ch;
+}
+
+.note {
+  display: grid;
+
+  grid-template-columns: min-content 20ch auto 20ch 20ch min-content;
+  align-items: center;
+
+  border-bottom: 1px solid black;
+  padding-bottom: var(--default-list-items-gap);
+
+  &:last-of-type {
+    border-bottom: none;
+  }
+}
+
+.note > *:not(button) {
+  margin-right: var(--default-list-elements-gap);
+}
+
+.note__content {
+  grid-column-start: 1;
+  grid-column-end: -1;
+}
+
+.notes {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
-}
-
-.note-edit-name {
-  font-size: 1rem;
-}
-
-.note-edit-content {
-  font-size: 1rem;
-  height: 10ch;
-  resize: none;
-}
-
-.note-edit-actions {
-  display: flex;
-  flex-direction: row;
-  gap: 1rem;
-}
-
-.notes-header {
-  margin-bottom: 1rem;
+  gap: var(--default-list-items-gap);
 }

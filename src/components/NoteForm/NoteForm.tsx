@@ -1,9 +1,17 @@
 import EditButton from "@Components/Buttons/EditButton";
 import RemoveButton from "@Components/Buttons/RemoveButton";
 import { useState } from "react";
+
 import "./style.css";
 
-const NoteForm = (props: any) => {
+interface INoteForm {
+  name: string;
+  content: string;
+  onSave: (formData: any) => void;
+  onCancel: () => void;
+}
+
+const NoteForm = (props: INoteForm) => {
   const { name, content } = props;
   const { onSave, onCancel } = props;
 
@@ -11,18 +19,18 @@ const NoteForm = (props: any) => {
   const [newName, setNewName] = useState<string>(name);
 
   return (
-    <div className="note-edit-wrapper">
+    <div className="note-edit">
       <input
-        className="note-edit-name"
+        className="note-edit__name"
         onChange={(e) => setNewName(e.target.value)}
         value={newName}
       />
       <textarea
-        className="note-edit-content"
+        className="note-edit__content"
         onChange={(e) => setNewContent(e.target.value)}
         value={newContent}
       />
-      <div className="note-edit-actions">
+      <div className="note-edit__actions">
         <EditButton
           onClick={() => onSave({ name: newName, content: newContent })}
         >

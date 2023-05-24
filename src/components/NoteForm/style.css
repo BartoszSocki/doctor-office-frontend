@@ -1,20 +1,20 @@
-.note-edit-wrapper {
+.note-edit {
   display: flex;
   flex-direction: column;
   gap: 1rem;
 }
 
-.note-edit-name {
+.note-edit__name {
   font-size: 1rem;
 }
 
-.note-edit-content {
+.note-edit__content {
   font-size: 1rem;
   height: 10ch;
   resize: none;
 }
 
-.note-edit-actions {
+.note-edit__actions {
   display: flex;
   flex-direction: row;
   gap: 1rem;

@@ -1,7 +1,7 @@
 import type ScheduledVisitFormData from "@Interfaces/ScheduledVisitFormData";
 import { postRequest } from "@Utils/FetchUtils";
 import { type SubmitHandler, useForm } from "react-hook-form";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import "./style.css";
 
 const DayVisitSchedulerForm = () => {
@@ -11,8 +11,22 @@ const DayVisitSchedulerForm = () => {
     handleSubmit,
     formState: { errors },
   } = useForm<ScheduledVisitFormData>();
+  const { day } = useParams();
+
   const onSubmit: SubmitHandler<ScheduledVisitFormData> = async (data) => {
-    await postRequest(`${import.meta.env.VITE_API_URL}/scheduled-visits`, data);
+    data.dayOfTheWeek = day as string;
+    try {
+      await postRequest(
+        `${import.meta.env.VITE_API_URL}/api/doctor/scheduled-visits`,
+        data
+      );
+      navigate(-1);
+    } catch (e) {
+      console.log("error");
+    }
+  };
+
+  const handleCancel = () => {
     navigate(-1);
   };
 
@@ -120,7 +134,12 @@ const DayVisitSchedulerForm = () => {
 
       <div className="day-visit-scheduler-form-actions">
         <input className="btn-edit" type="submit" value={"create"} />
-        <input className="btn-remove" type="button" value={"cancel"} />
+        <input
+          className="btn-remove"
+          type="button"
+          value={"cancel"}
+          onClick={handleCancel}
+        />
       </div>
     </form>
   );

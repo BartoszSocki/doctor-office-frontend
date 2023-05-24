@@ -57,7 +57,7 @@ const router = createBrowserRouter([
         },
       },
       {
-        path: "/dashboard/doctor/scheduled-visits/new",
+        path: "/dashboard/doctor/scheduled-visits/:day/new",
         element: <DayVisitSchedulerForm />,
       },
       {

@@ -6,10 +6,16 @@ import { useState } from "react";
 import { FiChevronDown, FiChevronUp } from "react-icons/fi";
 
 import "./style.css";
+import { useNavigate } from "react-router-dom";
 
 const DayVisitScheduler = (props: any) => {
   const { day, scheduledVisits, setScheduledVisits } = props;
   const [isCollapsed, setIsColapsed] = useState(false);
+  const navigate = useNavigate();
+
+  const handleNewVisit = () => {
+    navigate(`/dashboard/doctor/scheduled-visits/${day as string}/new`);
+  };
 
   return (
     <>
@@ -22,7 +28,7 @@ const DayVisitScheduler = (props: any) => {
         </div>
         <p>{day}</p>
         <div className="day-visit-scheduler-space" />
-        <EditButton onEdit={() => {}}>add</EditButton>
+        <EditButton onClick={() => handleNewVisit()}>add</EditButton>
       </nav>
       <>
         {isCollapsed

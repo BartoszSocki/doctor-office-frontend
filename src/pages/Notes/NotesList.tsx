@@ -17,7 +17,7 @@ const NotesListHeader = () => {
 
 const NotesList = ({ children }: any) => {
   return (
-    <ul className="notes">
+    <ul className="notes__list">
       <NotesListHeader />
       {children}
     </ul>

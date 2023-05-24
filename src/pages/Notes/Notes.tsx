@@ -1,8 +1,8 @@
 import { useLoaderData, useNavigate } from "react-router-dom";
-
-import "./style.css";
 import NotesList from "@Pages/Notes/NotesList";
 import Note from "@Pages/Notes/Note";
+
+import "./style.css";
 
 const Notes = () => {
   const navigate = useNavigate();
@@ -12,7 +12,7 @@ const Notes = () => {
 
   return (
     <div>
-      <h1 className="notes-header">Notes</h1>
+      <h1 className="notes__header">Notes</h1>
       <NotesList>
         {notes.map((n: NoteData) => {
           const handleEdit = () => {

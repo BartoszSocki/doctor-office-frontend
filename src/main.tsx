@@ -10,7 +10,6 @@ import Login from "@Pages/Login/Login";
 import Dashboard from "@Pages/Dashboard/Dashboard";
 import PlannedVisits from "@Pages/PlannedVisits/PlannedVisits";
 import Notes from "@Pages/Notes/Notes";
-import NoteEdit from "@Pages/Notes/NoteEdit";
 import NoteCreate from "@Pages/Notes/NoteCreate";
 import { getRequest } from "@Utils/FetchUtils";
 import ClientsList from "@Pages/Clients/ClientsList";
@@ -20,6 +19,7 @@ import DoctorRegistrationForm from "@Pages/Register/DoctorRegistrationForm";
 import VisitScheduler from "@Pages/VisitScheduler/VisitScheduler";
 import DayVisitSchedulerForm from "@Pages/VisitScheduler/DayVisitSchedulerForm";
 import { getAllNotes, getDoctorNotesAboutClientWithId } from "@Utils/ApiUtils";
+import NoteEdit from "@Pages/Notes/NoteEdit";
 
 // routing in application
 const router = createBrowserRouter([

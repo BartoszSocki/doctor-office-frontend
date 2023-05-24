@@ -1,4 +1,5 @@
 import type IAppButtonProps from "@Interfaces/IAppButtonProps";
+
 import "./style.css";
 
 const EditButton = ({ children, onClick, ...rest }: IAppButtonProps) => {

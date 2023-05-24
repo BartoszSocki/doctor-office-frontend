@@ -5,9 +5,9 @@ import { updateNote } from "@Utils/ApiUtils";
 import "./style.css";
 
 const NoteEdit = () => {
-  const data = useLoaderData() as any;
+  const { data } = useLoaderData() as any;
   const navigate = useNavigate();
-  const { content, name, id } = data.data;
+  const { content, name, id } = data;
 
   const handleCancel = () => {
     navigate(-1);

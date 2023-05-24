@@ -1,51 +1,34 @@
-.btn-remove {
+.app-button {
   border: 1px solid transparent;
   background: transparent;
   display: inline-block;
   align-self: end;
-  color: rgb(216, 89, 89);
   font-weight: bold;
   cursor: pointer;
 
   border: 2px solid currentColor;
   padding: 0.1rem 0.2rem;
   border-radius: 4px;
+}
+
+.app-btn--remove {
+  color: rgb(216, 89, 89);
 
   &:hover {
     color: #bd0000;
   }
 }
 
-.btn-edit {
-  border: 1px solid transparent;
-  background: transparent;
-  display: inline-block;
-  align-self: end;
+.app-btn--edit {
   color: blue;
-  font-weight: bold;
-  cursor: pointer;
-
-  border: 2px solid currentColor;
-  padding: 0.1rem 0.2rem;
-  border-radius: 4px;
 
   &:hover {
     color: #0000d0;
   }
 }
 
-.btn-create {
-  border: 1px solid transparent;
-  background: transparent;
-  display: inline-block;
-  align-self: end;
+.app-btn--create {
   color: #009100;
-  font-weight: bold;
-  cursor: pointer;
-
-  border: 2px solid currentColor;
-  padding: 0.1rem 0.2rem;
-  border-radius: 4px;
 
   &:hover {
     color: #007900;

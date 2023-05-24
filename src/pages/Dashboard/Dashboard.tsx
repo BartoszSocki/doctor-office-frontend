@@ -1,8 +1,9 @@
 import Sidebar from "@Components/Sidebar/Sidebar";
 import { Outlet, useNavigate } from "react-router-dom";
-import "./style.css";
 import { useEffect } from "react";
 import useAuth from "@Hooks/useAuth";
+
+import "./style.css";
 
 const Dashboard = () => {
   const { isAuthenticated } = useAuth();
@@ -17,7 +18,9 @@ const Dashboard = () => {
   return (
     <div>
       <div className="dashboard-screen-split">
-        <Sidebar />
+        <div className="dashboard-left-panel-wrapper">
+          <Sidebar />
+        </div>
         <div className="dashboard-right-panel-wrapper">
           <Outlet />
         </div>

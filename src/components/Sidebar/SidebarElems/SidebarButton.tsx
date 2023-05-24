@@ -3,16 +3,11 @@ import "./style.css";
 
 const SidebarButton = ({ name, onClickHandler }: SidebarButtonProps) => {
   return (
-    <>
-      <li>
-        <button
-          className="sidebar-elem-wrapper sidebar-elem"
-          onClick={() => onClickHandler()}
-        >
-          <p>{name}</p>
-        </button>
-      </li>
-    </>
+    <li>
+      <button className="sidebar__elem" onClick={() => onClickHandler()}>
+        {name}
+      </button>
+    </li>
   );
 };
 

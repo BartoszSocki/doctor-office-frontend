@@ -1,24 +1,10 @@
-.sidebar-wrapper {
-  width: 20rem;
-  height: 100vh;
-
-  padding: 0.5rem 1rem;
-  padding-bottom: 1rem;
-  border-right: 2px solid #535353;
-
-  display: flex;
-  flex-direction: column;
-
-  overflow: hidden;
-}
-
-.sidebar-header {
+.sidebar__header {
   font-size: 1.65rem;
   padding-block: 1rem;
 }
 
-.sidebar-body {
-  &-flex {
+.sidebar__links {
+  &__list {
     display: flex;
     flex-direction: column;
     gap: 0.8rem;
@@ -27,13 +13,13 @@
   overflow: scroll;
 }
 
-.sidebar-space {
+.sidebar__space {
   display: inline-block;
   width: 100%;
 
   flex-grow: 1;
 }
 
-.sidebar-footer {
+.sidebar__footer {
 
 }

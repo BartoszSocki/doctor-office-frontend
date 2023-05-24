@@ -1,3 +1,7 @@
+:root {
+  --sidebar-width: 20rem;
+}
+
 .dashboard-screen-split {
   display: flex;
   flex-direction: row;
@@ -8,6 +12,20 @@
 
 .dashboard-right-panel-wrapper {
   height: 100vh;
-  width: 100%;
+  width: calc(100% - var(--sidebar-width));
   padding: 1rem;
 }
+
+.dashboard-left-panel-wrapper {
+  width: var(--sidebar-width);
+  height: 100vh;
+
+  padding: 0.5rem 1rem 1rem;
+  border-right: 2px solid #535353;
+
+  display: flex;
+  flex-direction: column;
+
+  overflow: hidden;
+}
+  

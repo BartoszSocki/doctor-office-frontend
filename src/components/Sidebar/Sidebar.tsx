@@ -1,12 +1,18 @@
-import "./style.css";
 import useAuth from "@Hooks/useAuth";
 import DoctorSidebar from "./DoctorSidebar";
 import ClientSidebar from "./ClientSidebar";
+import SidebarButton from "./SidebarElems/SidebarButton";
+import { useNavigate } from "react-router-dom";
+
+import "./style.css";
 
 const Sidebar = () => {
-  const { role, isAuthenticated } = useAuth();
+  const { role, logout } = useAuth();
+  const navigate = useNavigate();
 
-  console.log(role, isAuthenticated);
+  const handleLogout = () => {
+    logout(() => navigate("/login"));
+  };
 
   return (
     <>
@@ -15,6 +21,16 @@ const Sidebar = () => {
       ) : role === "CLIENT" ? (
         <ClientSidebar />
       ) : null}
+
+      <div className="sidebar__space" />
+
+      <section className="sidebar__footer">
+        <SidebarButton
+          name={"🔒 log out"}
+          key={"bb"}
+          onClickHandler={handleLogout}
+        />
+      </section>
     </>
   );
 };

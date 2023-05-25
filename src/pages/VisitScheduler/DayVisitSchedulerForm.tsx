@@ -1,8 +1,9 @@
 import type ScheduledVisitFormData from "@Interfaces/ScheduledVisitFormData";
 import { type SubmitHandler, useForm } from "react-hook-form";
 import { useNavigate, useParams } from "react-router-dom";
-import "./style.css";
 import { DoctorAPI } from "@Utils/ApiUtils";
+
+import "./style.css";
 
 const DayVisitSchedulerForm = () => {
   const navigate = useNavigate();

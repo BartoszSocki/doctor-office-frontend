@@ -1,9 +1,8 @@
 import NoteForm from "@Components/NoteForm/NoteForm";
-
 import { useNavigate, useParams } from "react-router-dom";
-import "./style.css";
-import { postRequest } from "@Utils/FetchUtils";
 import { DoctorAPI } from "@Utils/ApiUtils";
+
+import "./style.css";
 
 const NoteCreate = () => {
   const { id } = useParams();

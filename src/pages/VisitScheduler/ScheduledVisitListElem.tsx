@@ -1,7 +1,7 @@
 import type DoctorScheduledVisitData from "@Interfaces/DoctorScheduledVisitData";
-import "./style.css";
-import ListElem from "./ListElem";
 import RemoveButton from "@Components/Buttons/RemoveButton";
+
+import "./style.css";
 
 const getTime = (timeString: string) => {
   const timeParts = timeString.split(":");

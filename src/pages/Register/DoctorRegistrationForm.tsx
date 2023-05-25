@@ -1,8 +1,9 @@
 import { type SubmitHandler, useForm } from "react-hook-form";
-import "./style.css";
 import { useNavigate } from "react-router-dom";
 import type DoctorRegistrationFormData from "@Interfaces/DoctorRegistrationFormData";
 import { UserAPI } from "@Utils/ApiUtils";
+
+import "./style.css";
 
 const DoctorRegistrationForm = () => {
   const navigate = useNavigate();

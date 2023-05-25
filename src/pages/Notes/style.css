@@ -15,6 +15,12 @@
   &:last-of-type {
     border-bottom: none;
   }
+
+  & > * {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
 }
 
 .note > *:not(:last-child) {

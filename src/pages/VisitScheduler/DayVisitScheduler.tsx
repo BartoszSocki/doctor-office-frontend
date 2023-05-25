@@ -1,5 +1,5 @@
 import EditButton from "@Components/Buttons/EditButton";
-import ScheduledVisitListElem from "@Components/ListElem/ScheduledVisitListElem";
+import ScheduledVisitListElem from "@Pages/VisitScheduler/ScheduledVisitListElem";
 import type DoctorScheduledVisitData from "@Interfaces/DoctorScheduledVisitData";
 import { useState } from "react";
 import { FiChevronDown, FiChevronUp } from "react-icons/fi";

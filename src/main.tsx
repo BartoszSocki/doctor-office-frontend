@@ -10,7 +10,7 @@ import Dashboard from "@Pages/Dashboard/Dashboard";
 import PlannedVisits from "@Pages/PlannedVisits/PlannedVisits";
 import Notes from "@Pages/Notes/Notes";
 import NoteCreate from "@Pages/Notes/NoteCreate";
-import DoctorsList from "@Pages/Doctors/DoctorsList";
+import Doctors from "@Pages/Doctors/Doctors";
 import ClientRegistrationForm from "@Pages/Register/ClientRegistrationForm";
 import DoctorRegistrationForm from "@Pages/Register/DoctorRegistrationForm";
 import VisitScheduler from "@Pages/VisitScheduler/VisitScheduler";
@@ -97,7 +97,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/dashboard/doctors",
-        element: <DoctorsList />,
+        element: <Doctors />,
         loader: async ({ request }) => {
           const options = request.url.split("?").at(1) ?? "";
           return await ClientAPI.get(`/doctors?${options}`);

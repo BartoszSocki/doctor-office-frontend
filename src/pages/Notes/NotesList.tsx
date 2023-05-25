@@ -1,7 +1,8 @@
-import EditButton from "@Components/Buttons/EditButton";
+import "./style.css";
+
 import { FiChevronDown } from "react-icons/fi";
 
-import "./style.css";
+import EditButton from "@Components/Buttons/EditButton";
 
 const NotesListHeader = () => {
   return (

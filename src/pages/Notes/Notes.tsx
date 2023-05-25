@@ -1,8 +1,9 @@
-import { useLoaderData, useNavigate } from "react-router-dom";
-import NotesList from "@Pages/Notes/NotesList";
-import Note from "@Pages/Notes/Note";
-
 import "./style.css";
+
+import { useLoaderData, useNavigate } from "react-router-dom";
+
+import Note from "@Pages/Notes/Note";
+import NotesList from "@Pages/Notes/NotesList";
 
 const Notes = () => {
   const navigate = useNavigate();

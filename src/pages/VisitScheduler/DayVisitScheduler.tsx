@@ -8,41 +8,56 @@ import { FiChevronDown, FiChevronUp } from "react-icons/fi";
 import "./style.css";
 import { useNavigate } from "react-router-dom";
 
-const DayVisitScheduler = (props: any) => {
+interface IDayVisitScheduler {
+  day: string;
+  scheduledVisits: [DoctorScheduledVisitData];
+  setScheduledVisits: (visits: DoctorScheduledVisitData[]) => void;
+}
+
+const DayVisitScheduler = (props: IDayVisitScheduler) => {
   const { day, scheduledVisits, setScheduledVisits } = props;
   const [isCollapsed, setIsColapsed] = useState(false);
   const navigate = useNavigate();
 
+  const dayCode = day.substring(0, 3).toUpperCase();
+
   const handleNewVisit = () => {
-    navigate(`/dashboard/doctor/scheduled-visits/${day as string}/new`);
+    navigate(`/dashboard/doctor/scheduled-visits/${dayCode}/new`);
   };
 
   return (
     <>
-      <nav className="day-visit-scheduler-nav">
+      <nav className="day-visit-scheduler__nav">
         <div
-          className="day-visit-scheduler-collapse"
+          className="day-visit-scheduler__collapse"
           onClick={() => setIsColapsed((c) => !c)}
         >
           {isCollapsed ? <FiChevronUp /> : <FiChevronDown />}
         </div>
-        <p>{day}</p>
-        <div className="day-visit-scheduler-space" />
+        <h2>{day}</h2>
+        <div className="day-visit-scheduler__space" />
         <EditButton onClick={() => handleNewVisit()}>add</EditButton>
       </nav>
-      <>
+
+      <ul className="day-visit-scheduler__visits">
         {isCollapsed
-          ? "..."
+          ? null
           : scheduledVisits
-              .filter((v: DoctorScheduledVisitData) => v.dayOfTheWeek === day)
-              .map((v: DoctorScheduledVisitData) => {
+              .filter((v) => v.dayOfTheWeek === dayCode)
+              .map((v) => {
                 const onRemove = async () => {
-                  setScheduledVisits(
-                    scheduledVisits.filter(
-                      (sv: DoctorScheduledVisitData) => sv.id !== v.id
+                  if (
+                    confirm(
+                      "Are you sure, you want to remove this visit from the schedule?"
                     )
-                  );
-                  await deleteRequest(v._links.remove.href);
+                  ) {
+                    setScheduledVisits(
+                      scheduledVisits.filter(
+                        (sv: DoctorScheduledVisitData) => sv.id !== v.id
+                      )
+                    );
+                    await deleteRequest(v._links.remove.href);
+                  }
                 };
 
                 return (
@@ -53,7 +68,7 @@ const DayVisitScheduler = (props: any) => {
                   />
                 );
               })}
-      </>
+      </ul>
     </>
   );
 };

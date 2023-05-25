@@ -7,8 +7,8 @@ const role = (): Role => {
   return token !== null ? jwt<JwtData>(token).role : "ANONYMOUS";
 };
 
-const getToken = (): string => {
-  return localStorage.getItem("token") ?? ":(";
+const getToken = (): string | null => {
+  return localStorage.getItem("token");
 };
 
 const saveToken = (token: string) => {
@@ -20,7 +20,12 @@ const deleteToken = () => {
 };
 
 const isTokenValid = () => {
-  const token = jwt<JwtData>(getToken());
+  const rawToken = getToken();
+  if (rawToken === null) {
+    return false;
+  }
+
+  const token = jwt<JwtData>(getToken() ?? "");
   if (!("exp" in token)) {
     return false;
   }

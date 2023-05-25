@@ -20,6 +20,8 @@ import DayVisitSchedulerForm from "@Pages/VisitScheduler/DayVisitSchedulerForm";
 import { getAllNotes, getDoctorNotesAboutClientWithId } from "@Utils/ApiUtils";
 import NoteEdit from "@Pages/Notes/NoteEdit";
 import Clients from "@Pages/Clients/Clients";
+import LoginGuard from "@Components/LoginGuard/LoginGuard";
+import ErrorHandler from "@Components/Error/ErrorHandler";
 
 // routing in application
 const router = createBrowserRouter([
@@ -38,6 +40,7 @@ const router = createBrowserRouter([
   {
     path: "/dashboard",
     element: <Dashboard />,
+    errorElement: <ErrorHandler />,
     children: [
       {
         path: "/dashboard/client/planned-visits",
@@ -63,7 +66,12 @@ const router = createBrowserRouter([
       },
       {
         path: "/dashboard/doctor/planned-visits",
-        element: <PlannedVisits />,
+        // element: ,
+        element: (
+          <LoginGuard>
+            <PlannedVisits />
+          </LoginGuard>
+        ),
         loader: async () => {
           return await getRequest(
             `${import.meta.env.VITE_API_URL}/api/doctor/planned-visits`
@@ -112,7 +120,11 @@ const router = createBrowserRouter([
       },
       {
         path: "/dashboard/clients",
-        element: <Clients />,
+        element: (
+          <LoginGuard>
+            <Clients />
+          </LoginGuard>
+        ),
         loader: async ({ request }) => {
           return await getRequest(
             `${import.meta.env.VITE_API_URL}/api/doctor/clients`
@@ -131,6 +143,10 @@ const router = createBrowserRouter([
         },
       },
     ],
+  },
+  {
+    path: "/*",
+    element: <Login />,
   },
 ]);
 

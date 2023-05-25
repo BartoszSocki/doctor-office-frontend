@@ -1,25 +1,59 @@
-.day-visit-scheduler-nav {
+.scheduler-header {
+  margin-bottom: 1rem;
+}
+
+.day-visit-scheduler__nav {
   display: flex;
   flex-direction: row;
   gap: 1rem;
   align-items: center;
-  padding-bottom: 0.5rem;
+  padding-block: 1rem;
 }
 
-.day-visit-scheduler-space {
+.day-visit-scheduler__space {
   flex-grow: 1;
 }
 
-.day-visit-scheduler-collapse {
+.day-visit-scheduler__collapse {
   color: blue;
   cursor: pointer;
-  scale: 1.5;
+  scale: 2;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+
+.day-visit-scheduler__visits {
+  display: flex;
+  flex-direction: column;
+  gap: 1ch;
+}
+
+
+.scheduled-visit {
+  display: grid;
+
+  grid-template-columns: 16ch 20ch auto 20ch auto min-content;
+  align-items: center;
+
+  border-bottom: 1px solid black;
+  padding-bottom: var(--default-list-items-gap);
+
+  &:last-of-type {
+    border-bottom: none;
+  }
+
+  & > *:not(button:last-child) {
+    margin-right: 1ch;
+  }
+}
+
 
 .visit-scheduler-wrapper {
   display: flex;
   flex-direction: column;
-  gap: 1ch;
+  /* gap: 1ch; */
 }
 
 .day-visit-scheduler-wrapper {

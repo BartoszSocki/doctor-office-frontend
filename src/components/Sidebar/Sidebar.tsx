@@ -16,6 +16,8 @@ const Sidebar = () => {
 
   return (
     <>
+      <h1 className="sidebar__header">Menu</h1>
+
       {role === "DOCTOR" ? (
         <DoctorSidebar />
       ) : role === "CLIENT" ? (
@@ -25,7 +27,7 @@ const Sidebar = () => {
       <div className="sidebar__space" />
 
       <section className="sidebar__footer">
-        <SidebarButton name={"🔒 log out"} key={"bb"} onClick={handleLogout} />
+        <SidebarButton name={"🔒 log out"} onClick={handleLogout} />
       </section>
     </>
   );

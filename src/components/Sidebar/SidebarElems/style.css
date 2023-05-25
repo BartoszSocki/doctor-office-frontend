@@ -1,9 +1,16 @@
 :root {
-  --primary-sidebar-elem-brd: #befcff;
+  --primary-sidebar-elem-brd: #000;
+  --primary-sidebar-elem-clr: #f3f6ff;
+  --primary-sidebar-elem-brd-darker: #000;
+  --primary-sidebar-elem-clr-darker: #b1c5ff;
+  --sidebar-elem-text-clr: #000;
+
+  /* --primary-sidebar-elem-brd: #befcff;
   --primary-sidebar-elem-clr: #f5ffff;
   --primary-sidebar-elem-brd-darker: #5ae1d4;
   --primary-sidebar-elem-clr-darker: #dbffff;
   --sidebar-elem-text-clr: #000;
+*/
 }
 
 .sidebar__elem {
@@ -13,8 +20,8 @@
 
   display: inline-block;
 
-  border: 1px solid var(--primary-sidebar-elem-brd);
-  border-radius: 0.8rem;
+  border: 1.5px solid var(--primary-sidebar-elem-brd);
+  border-radius: 8px;
 
   background: var(--primary-sidebar-elem-clr);
   cursor: pointer;

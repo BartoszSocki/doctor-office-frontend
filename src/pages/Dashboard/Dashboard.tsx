@@ -17,11 +17,11 @@ const Dashboard = () => {
 
   return (
     <div className="dashboard">
-      <div className="dashboard-screen-split">
-        <div className="dashboard-left-panel-wrapper">
+      <div className="dashboard__screen-split">
+        <div className="dashboard__left-panel">
           <Sidebar />
         </div>
-        <div className="dashboard-right-panel-wrapper">
+        <div className="dashboard__right-panel">
           <Outlet />
         </div>
       </div>

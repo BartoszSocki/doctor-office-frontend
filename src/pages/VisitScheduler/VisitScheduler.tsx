@@ -1,9 +1,19 @@
 import { useLoaderData } from "react-router-dom";
-import "./style.css";
 import { useState } from "react";
 import DayVisitScheduler from "./DayVisitScheduler";
 
-const days = ["MON", "TUE", "WED", "THU", "FRI", "SAT", "SUN"];
+import "./style.css";
+
+// const days = ["MON", "TUE", "WED", "THU", "FRI", "SAT", "SUN"];
+const days = [
+  "Monday",
+  "Tuesday",
+  "Wednesday",
+  "Thursday",
+  "Friday",
+  "Saturday",
+  "Sunday",
+];
 
 const VisitScheduler = () => {
   const res = useLoaderData() as any;
@@ -13,7 +23,7 @@ const VisitScheduler = () => {
 
   return (
     <>
-      <h1 className="clients-header">Visits Scheduler</h1>
+      <h1 className="scheduler-header">Visits Scheduler</h1>
       <div className="visit-scheduler-wrapper">
         {days.map((day) => {
           return (

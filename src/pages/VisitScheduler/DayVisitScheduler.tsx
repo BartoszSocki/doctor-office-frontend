@@ -1,13 +1,14 @@
-import EditButton from "@Components/Buttons/EditButton";
-import ScheduledVisitListElem from "@Pages/VisitScheduler/ScheduledVisitListElem";
-import type DoctorScheduledVisitData from "@Interfaces/DoctorScheduledVisitData";
+import "./style.css";
+
 import { useState } from "react";
 import { FiChevronDown, FiChevronUp } from "react-icons/fi";
-
-import "./style.css";
 import { useNavigate } from "react-router-dom";
+
+import EditButton from "@Components/Buttons/EditButton";
+import ScheduledVisit from "@Pages/VisitScheduler/ScheduledVisit";
 import { DoctorAPI } from "@Utils/ApiUtils";
 
+import type DoctorScheduledVisitData from "@Interfaces/DoctorScheduledVisitData";
 interface IDayVisitScheduler {
   day: string;
   scheduledVisits: [DoctorScheduledVisitData];
@@ -61,7 +62,7 @@ const DayVisitScheduler = (props: IDayVisitScheduler) => {
                 };
 
                 return (
-                  <ScheduledVisitListElem
+                  <ScheduledVisit
                     scheduledVisit={v}
                     key={v.id}
                     onRemove={onRemove}

@@ -1,9 +1,12 @@
 import type ScheduledVisitFormData from "@Interfaces/ScheduledVisitFormData";
+import "./style.css";
+
 import { type SubmitHandler, useForm } from "react-hook-form";
 import { useNavigate, useParams } from "react-router-dom";
-import { DoctorAPI } from "@Utils/ApiUtils";
 
-import "./style.css";
+import EditButton from "@Components/Buttons/EditButton";
+import RemoveButton from "@Components/Buttons/RemoveButton";
+import { DoctorAPI } from "@Utils/ApiUtils";
 
 const DayVisitSchedulerForm = () => {
   const navigate = useNavigate();
@@ -18,20 +21,21 @@ const DayVisitSchedulerForm = () => {
     formData.dayOfTheWeek = day as string;
     try {
       await DoctorAPI.post("/scheduled-visits", formData);
-      navigate(-1);
+      navigate("/dashboard/doctor/scheduled-visits");
     } catch (e) {
-      console.log("error");
+      console.log(e);
     }
   };
 
-  const handleCancel = () => {
-    navigate(-1);
+  const handleCancel = (e: any) => {
+    e.preventDefault();
+    navigate("/dashboard/doctor/scheduled-visits");
   };
 
   return (
     <form
       className="day-visit-scheduler-form-wrapper"
-      onSubmit={handleSubmit(onSubmit)}
+      // onSubmit={handleSubmit(onSubmit)}
     >
       <h1 className="clients-header">Visit Data</h1>
       <section className="day-visit-scheduler-form-section">
@@ -131,13 +135,16 @@ const DayVisitSchedulerForm = () => {
       </section>
 
       <div className="day-visit-scheduler-form-actions">
-        <input className="btn-edit" type="submit" value={"create"} />
+        <EditButton onClick={handleSubmit(onSubmit)}>save</EditButton>
+        <RemoveButton onClick={handleCancel}>cancel</RemoveButton>
+
+        {/* <input className="btn-edit" type="submit" value={"create"} />
         <input
           className="btn-remove"
           type="button"
           value={"cancel"}
           onClick={handleCancel}
-        />
+        /> */}
       </div>
     </form>
   );

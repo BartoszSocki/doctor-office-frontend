@@ -1,8 +1,8 @@
 import type ScheduledVisitFormData from "@Interfaces/ScheduledVisitFormData";
-import { postRequest } from "@Utils/FetchUtils";
 import { type SubmitHandler, useForm } from "react-hook-form";
 import { useNavigate, useParams } from "react-router-dom";
 import "./style.css";
+import { DoctorAPI } from "@Utils/ApiUtils";
 
 const DayVisitSchedulerForm = () => {
   const navigate = useNavigate();
@@ -13,13 +13,10 @@ const DayVisitSchedulerForm = () => {
   } = useForm<ScheduledVisitFormData>();
   const { day } = useParams();
 
-  const onSubmit: SubmitHandler<ScheduledVisitFormData> = async (data) => {
-    data.dayOfTheWeek = day as string;
+  const onSubmit: SubmitHandler<ScheduledVisitFormData> = async (formData) => {
+    formData.dayOfTheWeek = day as string;
     try {
-      await postRequest(
-        `${import.meta.env.VITE_API_URL}/api/doctor/scheduled-visits`,
-        data
-      );
+      await DoctorAPI.post("/scheduled-visits", formData);
       navigate(-1);
     } catch (e) {
       console.log("error");

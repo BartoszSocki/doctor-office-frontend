@@ -4,7 +4,6 @@ import DayVisitScheduler from "./DayVisitScheduler";
 
 import "./style.css";
 
-// const days = ["MON", "TUE", "WED", "THU", "FRI", "SAT", "SUN"];
 const days = [
   "Monday",
   "Tuesday",

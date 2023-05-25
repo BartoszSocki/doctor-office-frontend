@@ -1,20 +1,18 @@
-import { getRequest, putRequest } from "./FetchUtils";
+import axios from "axios";
+import { getToken } from "./TokenUtils";
 
-const getDoctorNotesAboutClientWithId = async (id: string) => {
-  return await getRequest(
-    `${import.meta.env.VITE_API_URL}/api/doctor/notes/client/${id}`
-  );
-};
+const DoctorAPI = axios.create({
+  baseURL: `${import.meta.env.VITE_API_URL}/api/doctor`,
+  headers: { Authorization: `Bearer ${getToken() ?? ""}` },
+});
 
-const getAllNotes = async () => {
-  return await getRequest(`${import.meta.env.VITE_API_URL}/api/doctor/notes`);
-};
+const ClientAPI = axios.create({
+  baseURL: `${import.meta.env.VITE_API_URL}/api/client`,
+  headers: { Authorization: `Bearer ${getToken() ?? ""}` },
+});
 
-const updateNote = async (id: string, formData: any) => {
-  await putRequest(
-    `${import.meta.env.VITE_API_URL}/api/doctor/notes/${id}`,
-    formData
-  );
-};
+const UserAPI = axios.create({
+  baseURL: `${import.meta.env.VITE_API_URL}`,
+});
 
-export { getDoctorNotesAboutClientWithId, getAllNotes, updateNote };
+export { DoctorAPI, ClientAPI, UserAPI };

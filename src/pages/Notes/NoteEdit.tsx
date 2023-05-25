@@ -1,6 +1,6 @@
 import NoteForm from "@Components/NoteForm/NoteForm";
 import { useLoaderData, useNavigate } from "react-router-dom";
-import { updateNote } from "@Utils/ApiUtils";
+import { DoctorAPI } from "@Utils/ApiUtils";
 
 import "./style.css";
 
@@ -14,7 +14,7 @@ const NoteEdit = () => {
   };
 
   const handleSave = async (formData: any) => {
-    await updateNote(id as string, formData);
+    await DoctorAPI.put(`/notes/${id as string}`, formData);
     navigate(-1);
   };
 

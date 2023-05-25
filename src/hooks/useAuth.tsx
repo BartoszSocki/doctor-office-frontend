@@ -1,4 +1,3 @@
-import axios from "axios";
 import { useState } from "react";
 
 import type Credentials from "@Interfaces/Credentials";
@@ -10,7 +9,7 @@ import {
   deleteToken,
   isTokenValid,
 } from "@Utils/TokenUtils";
-import { postRequest } from "@Utils/FetchUtils";
+import { UserAPI } from "@Utils/ApiUtils";
 
 const useAuth = () => {
   const [isAuthenticated, setIsAuthenticated] = useState<boolean>(
@@ -19,10 +18,7 @@ const useAuth = () => {
   const [role, setRole] = useState<Role>(tokenRole());
 
   const login = async (credentials: Credentials, onSuccess: () => void) => {
-    const res = await postRequest(
-      `${import.meta.env.VITE_API_URL}/token`,
-      credentials
-    );
+    const res = await UserAPI.post("/token", credentials);
 
     if (!("token" in res.data)) {
       setIsAuthenticated(false);

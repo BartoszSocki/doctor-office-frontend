@@ -1,8 +1,9 @@
 import type ClientRegistrationFormData from "@Interfaces/ClientRegistrationFormData";
 import { type SubmitHandler, useForm } from "react-hook-form";
-import "./style.css";
-import { postRequest } from "@Utils/FetchUtils";
 import { useNavigate } from "react-router-dom";
+import { UserAPI } from "@Utils/ApiUtils";
+
+import "./style.css";
 
 const ClientRegistrationForm = () => {
   const navigate = useNavigate();
@@ -12,9 +13,11 @@ const ClientRegistrationForm = () => {
     watch,
     formState: { errors },
   } = useForm<ClientRegistrationFormData>();
-  const onSubmit: SubmitHandler<ClientRegistrationFormData> = async (data) => {
-    console.log(data);
-    await postRequest(`${import.meta.env.VITE_API_URL}/register/client`, data);
+
+  const onSubmit: SubmitHandler<ClientRegistrationFormData> = async (
+    formData
+  ) => {
+    await UserAPI.post("/register/client", formData);
     navigate("/login");
   };
 

@@ -3,6 +3,7 @@ import NoteForm from "@Components/NoteForm/NoteForm";
 import { useNavigate, useParams } from "react-router-dom";
 import "./style.css";
 import { postRequest } from "@Utils/FetchUtils";
+import { DoctorAPI } from "@Utils/ApiUtils";
 
 const NoteCreate = () => {
   const { id } = useParams();
@@ -15,12 +16,7 @@ const NoteCreate = () => {
   const handleSave = async (formData: any) => {
     console.log(formData);
 
-    await postRequest(
-      `${import.meta.env.VITE_API_URL}/api/doctor/notes/planned-visit/${
-        id as string
-      }`,
-      formData
-    );
+    await DoctorAPI.post(`/notes/planned-visit/${id as string}`, formData);
     navigate(-1);
   };
 

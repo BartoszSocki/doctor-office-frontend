@@ -1,12 +1,12 @@
 import EditButton from "@Components/Buttons/EditButton";
 import ScheduledVisitListElem from "@Components/ListElem/ScheduledVisitListElem";
 import type DoctorScheduledVisitData from "@Interfaces/DoctorScheduledVisitData";
-import { deleteRequest } from "@Utils/FetchUtils";
 import { useState } from "react";
 import { FiChevronDown, FiChevronUp } from "react-icons/fi";
 
 import "./style.css";
 import { useNavigate } from "react-router-dom";
+import { DoctorAPI } from "@Utils/ApiUtils";
 
 interface IDayVisitScheduler {
   day: string;
@@ -56,7 +56,7 @@ const DayVisitScheduler = (props: IDayVisitScheduler) => {
                         (sv: DoctorScheduledVisitData) => sv.id !== v.id
                       )
                     );
-                    await deleteRequest(v._links.remove.href);
+                    await DoctorAPI.delete(v._links.remove.href);
                   }
                 };
 

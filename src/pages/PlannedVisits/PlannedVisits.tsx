@@ -1,11 +1,11 @@
 import useAuth from "@Hooks/useAuth";
 import PlannedVisitListElem from "@Components/ListElem/PlannedVisitListElem";
-import { deleteRequest } from "@Utils/FetchUtils";
 import type PlannedVisitData from "@Interfaces/PlannedVisitData";
-import "./style.css";
-
 import { useLoaderData, useNavigate } from "react-router-dom";
 import PlannedVisitsListHeaderElem from "@Components/ListElem/Headers/PlannedVisitsListHeaderElem";
+import axios from "axios";
+
+import "./style.css";
 
 const PlannedVisits = () => {
   const res = useLoaderData() as any;
@@ -20,7 +20,7 @@ const PlannedVisits = () => {
       <PlannedVisitsListHeaderElem role={role} />
       {plannedVisits.map((p: PlannedVisitData) => {
         const URL = p._links.self.href as string;
-        const cancel = async () => await deleteRequest(URL);
+        const cancel = async () => await axios.delete(URL);
         const newNote = () => navigate(`/dashboard/notes/new/${p.id}`);
 
         const user =

@@ -19,6 +19,7 @@ import { ClientAPI, DoctorAPI } from "@Utils/ApiUtils";
 import NoteEdit from "@Pages/Notes/NoteEdit";
 import Clients from "@Pages/Clients/Clients";
 import ErrorHandler from "@Components/Error/ErrorHandler";
+import LoginGuard from "@Components/LoginGuard/LoginGuard";
 
 // routing in application
 const router = createBrowserRouter([
@@ -36,7 +37,11 @@ const router = createBrowserRouter([
   },
   {
     path: "/dashboard",
-    element: <Dashboard />,
+    element: (
+      <LoginGuard>
+        <Dashboard />
+      </LoginGuard>
+    ),
     errorElement: <ErrorHandler />,
     children: [
       {

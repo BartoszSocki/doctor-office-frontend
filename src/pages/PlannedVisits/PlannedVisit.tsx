@@ -29,7 +29,12 @@ const PlannedVisit = (props: any) => {
       >
         new note
       </CreateButton>
-      <RemoveButton onClick={() => onRemove()}>cancel</RemoveButton>
+      <RemoveButton
+        disabled={cancelledMessage === "cancelled"}
+        onClick={() => onRemove()}
+      >
+        cancel
+      </RemoveButton>
     </li>
   );
 };

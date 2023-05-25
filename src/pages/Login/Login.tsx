@@ -1,24 +1,19 @@
-import { useEffect, useState } from "react";
+import "./style.css";
+
+import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
 import useAuth from "@Hooks/useAuth";
+
 import type Credentials from "@Interfaces/Credentials";
 
-import "./style.css";
-
 const Login = () => {
-  const { login, isAuthenticated } = useAuth();
+  const { login } = useAuth();
   const [credentials, setCredentials] = useState<Credentials>({
     username: "",
     password: "",
   });
   const navigate = useNavigate();
-
-  useEffect(() => {
-    if (isAuthenticated) {
-      navigate("/dashboard");
-    }
-  });
 
   const handleLogin = async () => {
     await login(credentials, () => navigate("/dashboard"));

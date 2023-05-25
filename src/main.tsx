@@ -1,31 +1,34 @@
+import "./index.css";
+
 import React from "react";
 import ReactDOM from "react-dom/client";
+import {
+  createBrowserRouter,
+  Navigate,
+  RouterProvider,
+} from "react-router-dom";
 
-// utils
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
-
-import "./index.css";
-import Login from "@Pages/Login/Login";
+import ErrorHandler from "@Components/Error/ErrorHandler";
+import LoginSwitch from "@Components/LoginGuard/LoginSwitch";
+import Clients from "@Pages/Clients/Clients";
 import Dashboard from "@Pages/Dashboard/Dashboard";
-import PlannedVisits from "@Pages/PlannedVisits/PlannedVisits";
-import Notes from "@Pages/Notes/Notes";
-import NoteCreate from "@Pages/Notes/NoteCreate";
 import Doctors from "@Pages/Doctors/Doctors";
+import LandingPage from "@Pages/LandingPage/LandingPage";
+import Login from "@Pages/Login/Login";
+import NoteCreate from "@Pages/Notes/NoteCreate";
+import NoteEdit from "@Pages/Notes/NoteEdit";
+import Notes from "@Pages/Notes/Notes";
+import PlannedVisits from "@Pages/PlannedVisits/PlannedVisits";
 import ClientRegistrationForm from "@Pages/Register/ClientRegistrationForm";
 import DoctorRegistrationForm from "@Pages/Register/DoctorRegistrationForm";
-import VisitScheduler from "@Pages/VisitScheduler/VisitScheduler";
 import DayVisitSchedulerForm from "@Pages/VisitScheduler/DayVisitSchedulerForm";
+import VisitScheduler from "@Pages/VisitScheduler/VisitScheduler";
 import { ClientAPI, DoctorAPI } from "@Utils/ApiUtils";
-import NoteEdit from "@Pages/Notes/NoteEdit";
-import Clients from "@Pages/Clients/Clients";
-import ErrorHandler from "@Components/Error/ErrorHandler";
-import LoginGuard from "@Components/LoginGuard/LoginGuard";
 
-// routing in application
 const router = createBrowserRouter([
   {
     path: "/login",
-    element: <Login />,
+    element: <LoginSwitch ok={<Navigate to="/dashboard" />} bad={<Login />} />,
   },
   {
     path: "/register/client",
@@ -37,13 +40,13 @@ const router = createBrowserRouter([
   },
   {
     path: "/dashboard",
-    element: (
-      <LoginGuard>
-        <Dashboard />
-      </LoginGuard>
-    ),
+    element: <LoginSwitch ok={<Dashboard />} bad={<Navigate to="/login" />} />,
     errorElement: <ErrorHandler />,
     children: [
+      {
+        path: "/dashboard",
+        element: <LandingPage />,
+      },
       {
         path: "/dashboard/client/planned-visits",
         element: <PlannedVisits />,
@@ -107,7 +110,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/*",
-    element: <Login />,
+    element: <Navigate to="/login" />,
   },
 ]);
 

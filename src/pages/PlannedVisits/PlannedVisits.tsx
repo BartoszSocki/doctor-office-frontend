@@ -23,7 +23,13 @@ const PlannedVisits = () => {
       <PlannedVisitsList>
         {plannedVisits.map((p: PlannedVisitData) => {
           const URL = p._links.self.href as string;
-          const cancel = async () => await axios.delete(URL);
+          const cancel = async () => {
+            if (
+              confirm("Are You sure You want to cancel this planned visit?")
+            ) {
+              await axios.delete(URL);
+            }
+          };
           const newNote = () => navigate(`/dashboard/notes/new/${p.id}`);
 
           const user =

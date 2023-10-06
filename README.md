@@ -34,11 +34,11 @@ Main functinalities included:
 ### Schedule Editor
 ![Schedule Editor](https://github.com/BartoszSocki/doctors-office-frontend/blob/read-me/images/pi-edycja-harmonogramu.png)
 ### Doctors Planned Visits
-![Schedule Editor](https://github.com/BartoszSocki/doctors-office-frontend/blob/read-me/images/pi-zaplanowane-wizyty-doktor.png)
+![Doctors Planned Visits](https://github.com/BartoszSocki/doctors-office-frontend/blob/read-me/images/pi-zaplanowane-wizyty-doktor.png)
 
 ### List of Doctors
-![Schedule Editor](https://github.com/BartoszSocki/doctors-office-frontend/blob/read-me/images/lista-doktorów.png)
+![List of Doctors](https://github.com/BartoszSocki/doctors-office-frontend/blob/read-me/images/pi-lista-doktorów.png)
 ### Visit Picker
-![Schedule Editor](https://github.com/BartoszSocki/doctors-office-frontend/blob/read-me/images/pi-wybor-wizyty.png)
+![Visit Picker](https://github.com/BartoszSocki/doctors-office-frontend/blob/read-me/images/pi-wybor-wizyty.png)
 ### Clients Planned Visits
-![Schedule Editor](https://github.com/BartoszSocki/doctors-office-frontend/blob/read-me/images/pi-zaplanowane-wizyty-klient.png)
+![Clients Planned Visits](https://github.com/BartoszSocki/doctors-office-frontend/blob/read-me/images/pi-zaplanowane-wizyty-klient.png)

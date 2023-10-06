@@ -15,9 +15,6 @@ Main functinalities included:
     - receiving email notifications
     - login / logout
 
-## ERD diagram
-![ERD diagram](https://github.com/BartoszSocki/doctors-office-frontend/blob/read-me/images/pi-erd.png)
-
 ## Technologies used:
 - Spring Boot
 - Spring Security
@@ -27,6 +24,9 @@ Main functinalities included:
 - ReacjJS
 - TypeScript
 - Axios
+
+## ERD diagram
+![ERD diagram](https://github.com/BartoszSocki/doctors-office-frontend/blob/read-me/images/pi-erd.png)
 
 ## Final Result
 

@@ -15,11 +15,8 @@ Main functinalities included:
     - receiving email notifications
     - login / logout
 
-## Use Cases
-![Use Cases](https://github.com/BartoszSocki/doctors-office-frontend/blob/read-me/images/pi-uc-lekarz-klient.drawio.pdf)
-
 ## ERD diagram
-![ERD diagram](https://github.com/BartoszSocki/doctors-office-frontend/blob/read-me/images/pi-erd.drawio.pdf)
+![ERD diagram](https://github.com/BartoszSocki/doctors-office-frontend/blob/read-me/images/pi-erd.png)
 
 ## Technologies used:
 - Spring Boot

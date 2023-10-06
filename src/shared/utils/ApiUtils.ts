@@ -21,6 +21,11 @@ ClientAPI.interceptors.request.use((config) => {
   return config;
 });
 
+axios.interceptors.request.use((config) => {
+  config.headers.Authorization = getAuthorization();
+  return config;
+});
+
 const UserAPI = axios.create({
   baseURL: `${import.meta.env.VITE_API_URL}`,
 });

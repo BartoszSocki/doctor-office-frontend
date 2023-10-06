@@ -26,23 +26,23 @@ Main functinalities included:
 - Axios
 
 ## ERD diagram
-![ERD diagram](https://github.com/BartoszSocki/doctors-office-frontend/blob/read-me/images/pi-erd.png)
+![ERD diagram](https://github.com/BartoszSocki/doctors-office-frontend/blob/main/images/pi-erd.png)
 
 ## Final Result
 
 ### Login Page
-![Login Page](https://github.com/BartoszSocki/doctors-office-frontend/blob/read-me/images/pi-ekran-logowania.png)
+![Login Page](https://github.com/BartoszSocki/doctors-office-frontend/blob/main/images/pi-ekran-logowania.png)
 ### Registration Page
-![Registration Page](https://github.com/BartoszSocki/doctors-office-frontend/blob/read-me/images/pi-rejestracja.png)
+![Registration Page](https://github.com/BartoszSocki/doctors-office-frontend/blob/main/images/pi-rejestracja.png)
 
 ### Schedule Editor
-![Schedule Editor](https://github.com/BartoszSocki/doctors-office-frontend/blob/read-me/images/pi-edycja-harmonogramu.png)
+![Schedule Editor](https://github.com/BartoszSocki/doctors-office-frontend/blob/main/images/pi-edycja-harmonogramu.png)
 ### Doctors Planned Visits
-![Doctors Planned Visits](https://github.com/BartoszSocki/doctors-office-frontend/blob/read-me/images/pi-zaplanowane-wizyty-doktor.png)
+![Doctors Planned Visits](https://github.com/BartoszSocki/doctors-office-frontend/blob/main/images/pi-zaplanowane-wizyty-doktor.png)
 
 ### List of Doctors
-![List of Doctors](https://github.com/BartoszSocki/doctors-office-frontend/blob/read-me/images/pi-lista-doktorów.png)
+![List of Doctors](https://github.com/BartoszSocki/doctors-office-frontend/blob/main/images/pi-lista-doktorów.png)
 ### Visit Picker
-![Visit Picker](https://github.com/BartoszSocki/doctors-office-frontend/blob/read-me/images/pi-wybor-wizyty.png)
+![Visit Picker](https://github.com/BartoszSocki/doctors-office-frontend/blob/main/images/pi-wybor-wizyty.png)
 ### Clients Planned Visits
-![Clients Planned Visits](https://github.com/BartoszSocki/doctors-office-frontend/blob/read-me/images/pi-zaplanowane-wizyty-klient.png)
+![Clients Planned Visits](https://github.com/BartoszSocki/doctors-office-frontend/blob/main/images/pi-zaplanowane-wizyty-klient.png)

@@ -1,7 +1,7 @@
 # Doctor Office App
 Main goal of this project was to learn new technologies (`Java Spring Boot` and `ReactJS`) and to create web application for management of doctors office.
 
-## Functionality
+## Functionalities
 Main functinalities included:
 1. For doctors:
     - creating and updating schedules
@@ -15,6 +15,12 @@ Main functinalities included:
     - receiving email notifications
     - login / logout
 
+## Use Cases
+![Use Cases](https://github.com/BartoszSocki/doctors-office-frontend/blob/read-me/images/pi-uc-lekarz-klient.drawio.pdf)
+
+## ERD diagram
+![ERD diagram](https://github.com/BartoszSocki/doctors-office-frontend/blob/read-me/images/pi-erd.drawio.pdf)
+
 ## Technologies used:
 - Spring Boot
 - Spring Security
@@ -22,6 +28,7 @@ Main functinalities included:
 - H2
 - JWT
 - ReacjJS
+- TypeScript
 - Axios
 
 ## Final Result
